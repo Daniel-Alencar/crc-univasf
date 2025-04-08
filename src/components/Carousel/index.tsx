@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from 'next/image';
 
 import Image1 from "@/public/assets/projects/project2/image1.png";
-import Image2 from "@/public/assets/projects/project2/image1.png";
+import Image2 from "@/public/assets/projects/project2/image2.png";
 import Image3 from "@/public/assets/projects/project2/image1.png";
 import Image4 from "@/public/assets/projects/project2/image1.png";
 
@@ -34,11 +34,11 @@ const Carousel = () => {
     autoplaySpeed: 3000,
     arrows: false,
     customPaging: (i: number) => (
-      <div className="w-8 h-8 flex items-center justify-center bg-yellow-400 text-black font-bold rounded-full cursor-pointer">
+      <div className="w-8 h-8 flex items-center justify-center bg-yellow-400 text-black font-bold rounded-full cursor-pointer border">
         {i + 1}
       </div>
     ),
-    dotsClass: "slick-dots flex justify-center space-x-2 mt-4",
+    dotsClass: "slick-dots flex justify-center space-x-2 mt-4 border gap-2",
   };
 
   return (
@@ -48,28 +48,33 @@ const Carousel = () => {
     "
     >
       <div className="
-        max-w-lg mx-auto p-7
+        max-w-lg mx-auto p-10 border
       "
       >
         <Slider {...settings}>
           {images.map((src, index) => (
             <div 
-              key={index} 
-              className="flex justify-center"
-            >
-              <Image 
-                src={Images[index]} 
-                alt={`Slide ${index + 1}`} 
-                className="rounded-lg"
-                height={400}
-              />
-            </div>
+            key={index} 
+            className="border flex items-center justify-center h-[400px]"
+          >
+            <Image 
+              src={Images[index]} 
+              alt={`Slide ${index + 1}`} 
+              // Garante que a imagem se ajuste sem cortar
+              className="rounded-lg object-contain" 
+              width={500} // Ajuste conforme necessário
+              height={400} 
+            />
+          </div>
+          
           ))}
         </Slider>
       </div>
-      <div className="p-5">
-        <h2 className="text-white font-bold">Titulo muito Top!</h2>
-        <p className="text-white">
+      <div className="border p-10">
+        <h2 className="text-white text-3xl font-bold">
+          TÍTULO MUITO TOP!
+        </h2>
+        <p className="text-white text-2xl">
           Aqui descreveremos em forma de resumo as atividades do crc. Também pensei em colocar essa sua parte de onde atuamos aqui também em uma das 4 bolinhas abaixo.
         </p>
       </div>
