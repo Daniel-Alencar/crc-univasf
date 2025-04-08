@@ -43,25 +43,36 @@ const Carousel = () => {
 
   return (
     <div className="
-      max-w-lg mx-auto p-4 
-      bg-gradient-to-r from-yellow-400 to-orange-500 
-      rounded-xl shadow-lg
+      flex bg-gradient-to-r from-yellow-400 to-orange-500 
+      rounded-xl shadow-lg w-2/3
     "
     >
-      <Slider {...settings}>
-        {images.map((src, index) => (
-          <div 
-            key={index} 
-            className="flex justify-center"
-          >
-            <Image 
-              src={Images[index]} 
-              alt={`Slide ${index + 1}`} 
-              className="rounded-lg" 
-            />
-          </div>
-        ))}
-      </Slider>
+      <div className="
+        max-w-lg mx-auto p-7
+      "
+      >
+        <Slider {...settings}>
+          {images.map((src, index) => (
+            <div 
+              key={index} 
+              className="flex justify-center"
+            >
+              <Image 
+                src={Images[index]} 
+                alt={`Slide ${index + 1}`} 
+                className="rounded-lg"
+                height={400}
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
+      <div className="p-5">
+        <h2 className="text-white font-bold">Titulo muito Top!</h2>
+        <p className="text-white">
+          Aqui descreveremos em forma de resumo as atividades do crc. Também pensei em colocar essa sua parte de onde atuamos aqui também em uma das 4 bolinhas abaixo.
+        </p>
+      </div>
     </div>
   );
 };

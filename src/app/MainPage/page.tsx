@@ -14,7 +14,6 @@ export default function MainPage() {
       <header className="bg-white shadow-md">
         <div className="container mx-auto flex justify-between items-center py-4 px-6">
           <div className="flex items-center text-2xl font-bold">
-            {/* Logo */}
             <Image src={Logo} alt='crc univasf'/>
           </div>
         </div>
@@ -60,7 +59,7 @@ export default function MainPage() {
       <section>
         <Image src={ExampleImage} alt='example image' />
       </section>
-      <section>
+      <section className='flex flex-col justify-center items-center'>
         <ImageCarousel />
       </section>
     </>
