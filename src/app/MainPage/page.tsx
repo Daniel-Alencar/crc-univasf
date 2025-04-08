@@ -3,8 +3,10 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import ImageCarousel from '@/components/Carousel';
+
 import Logo from '@/public/assets/logo.png';
-import ExampleImage from '@/public/assets/projects/image1.png';
+import ExampleImage from '@/public/assets/projects/project1/image1.png';
 
 export default function MainPage() {
   return (
@@ -57,6 +59,9 @@ export default function MainPage() {
       </header>
       <section>
         <Image src={ExampleImage} alt='example image' />
+      </section>
+      <section>
+        <ImageCarousel />
       </section>
     </>
   );
