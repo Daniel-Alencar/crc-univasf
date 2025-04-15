@@ -1,4 +1,4 @@
-'use-client';
+'use client';
 
 import React, { useState } from "react";
 import Slider from "react-slick";
@@ -33,10 +33,9 @@ const sliderComponents = [
     description: "Descrição 4",
     image: Image4,
   },
-]
+];
 
 const Carousel = () => {
-
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const settings = {
@@ -50,7 +49,7 @@ const Carousel = () => {
     arrows: false,
     afterChange: (index: number) => setCurrentSlide(index),
     customPaging: (i: number) => (
-      <div className="w-8 h-8 flex items-center justify-center bg-yellow-400 text-black font-bold rounded-full cursor-pointer border-4 border-green-800">
+      <div className="w-6 h-6 flex items-center justify-center bg-yellow-400 text-black font-bold rounded-full cursor-pointer border text-sm">
         {i + 1}
       </div>
     ),
@@ -58,24 +57,23 @@ const Carousel = () => {
   };
 
   return (
-    <div className="
-      flex bg-gradient-to-r from-yellow-400 to-orange-500 
-      rounded-xl shadow-lg w-2/3
-    "
-    >
-      <div className="
-        max-w-lg mx-auto p-10 border-4 border-blue-700
+    <div
+      className="
+        flex flex-col lg:flex-row 
+        bg-gradient-to-r from-yellow-400 to-orange-500 
+        rounded-xl shadow-lg w-full max-w-screen-xl mx-auto
       "
-      >
+    >
+      <div className="w-full lg:w-1/2 p-9">
         <Slider {...settings}>
           {sliderComponents.map((object, index) => (
-            <div 
-              key={index} 
-              className="border-4 border-red-800 flex items-center justify-center h-[400px] w-full"
+            <div
+              key={index}
+              className="flex items-center justify-center h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full"
             >
-              <Image 
-                src={object.image} 
-                alt={`Slide ${index + 1}`} 
+              <Image
+                src={object.image}
+                alt={`Slide ${index + 1}`}
                 className="rounded-lg object-cover w-full h-full"
                 width={500}
                 height={400}
@@ -84,11 +82,12 @@ const Carousel = () => {
           ))}
         </Slider>
       </div>
-      <div className="border-4 flex-1 border-amber-950 p-10">
-        <h2 className="text-white text-3xl font-bold">
+
+      <div className="w-full lg:w-1/2 p-6 flex flex-col justify-center">
+        <h2 className="text-white text-2xl sm:text-3xl font-bold mb-4">
           {sliderComponents[currentSlide].title}
         </h2>
-        <p className="text-white text-2xl">
+        <p className="text-white text-lg sm:text-xl">
           {sliderComponents[currentSlide].description}
         </p>
       </div>

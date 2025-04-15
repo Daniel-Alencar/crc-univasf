@@ -127,6 +127,7 @@ export default function MainPage() {
                 <span 
                   className="
                     text-sm sm:text-base md:text-lg lg:text-lg xl:text-2xl mt-1 text-center text-[#FB6B2D]
+                    leading-tight
                   "
                 >
                   {item.name.toUpperCase()}
