@@ -52,7 +52,6 @@ export default function MainPage() {
           </div>
         </div>
         
-        {/* Navbar */}
         <nav className="
           bg-gradient-to-r from-orange-500 to-yellow-400 px-6 py-3 shadow-lg"
         >
@@ -101,10 +100,7 @@ export default function MainPage() {
       </section>
 
       <section
-        className='
-          m-10
-        '
-      >
+        className='m-10'>
         <div className="mb-8">
           <button 
             className="
@@ -112,26 +108,25 @@ export default function MainPage() {
               text-2xl font-bold
             "
           >
-              Acessar Rápido
+            Acessar Rápido
           </button>
         </div>
 
-        {/* Icon Navigation */}
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-4 mb-8">
+        <div className="grid grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
           {rapidAccessMenu.map((item, index) => (
             <Link href="#" key={index} className="flex flex-col items-center">
               <div 
                 className="
-                  bg-[#FFE3AF] p-4 shadow-sm w-full aspect-square flex items-center justify-center
+                  bg-[#FFE3AF] p-4 shadow-sm w-full aspect-square
+                  flex flex-col items-center justify-center
                   border-4 border-[#FB6B2D]
-                  flex-col
                   font-bold
                 "
               >
                 <Image src={item.image} alt='Formaturas'/>
                 <span 
                   className="
-                    text-2xl mt-1 text-center text-[#FB6B2D]
+                    text-sm sm:text-base md:text-lg lg:text-lg xl:text-2xl mt-1 text-center text-[#FB6B2D]
                   "
                 >
                   {item.name.toUpperCase()}
@@ -142,11 +137,11 @@ export default function MainPage() {
         </div>
       </section>
       
-      <section className='
-          flex
-        '
-      >
-        <div className='flex flex-1'>
+      <section className='flex'>
+        <div className='
+          flex flex-1 
+          bg-amber-400 p-4 h-60
+        '>
           {/* Google Maps */}
         </div>
         
@@ -155,14 +150,27 @@ export default function MainPage() {
             flex flex-col flex-1
           "
         >
-          <h3 className="text-sm font-bold mb-2">COMO CHEGAR NO CRC UNIVASF</h3>
+          <h3 className="
+            text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl
+            font-bold mb-2
+          ">
+            COMO CHEGAR NO CRC UNIVASF
+          </h3>
           <div className="flex items-center mb-2">
             <div className="mr-2">📍</div>
-            <div className="text-xs">Av. Dr. Luiz, 1.001 - Londrina</div>
+            <div className="
+              text-sm sm:text-base md:text-lg lg:text-lg
+            ">
+              Av. Dr. Luiz, 1.001 - Londrina
+            </div>
           </div>
           <div className="flex items-center">
             <div className="mr-2">📞</div>
-            <div className="text-xs">(43) 3375-7000</div>
+            <div className="
+              text-sm sm:text-base md:text-lg lg:text-lg
+            ">
+              (43) 3375-7000
+            </div>
           </div>
         </div>
       </section>
