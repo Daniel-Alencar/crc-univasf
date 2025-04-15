@@ -8,6 +8,40 @@ import ImageCarousel from '@/components/Carousel';
 import Logo from '@/public/assets/logo.png';
 import ExampleImage from '@/public/assets/projects/project1/image1.png';
 
+import CourseImage from '@/public/assets/rapid_access/courses.png';
+import FormationImage from '@/public/assets/rapid_access/formations.png';
+import NewsImage from '@/public/assets/rapid_access/news.png';
+import ContactImage from '@/public/assets/rapid_access/Contact.png';
+import DigitalPointImage from '@/public/assets/rapid_access/DigitalPoint.png';
+import MakerColonyImage from '@/public/assets/rapid_access/MakerColony.png';
+
+export const rapidAccessMenu = [
+  {
+    name: "Cursos",
+    image: CourseImage,
+  },
+  {
+    name: "Colônia Maker",
+    image: MakerColonyImage,
+  },
+  {
+    name: "Notícias",
+    image: NewsImage,
+  },
+  {
+    name: "Formaturas",
+    image: FormationImage,
+  },
+  {
+    name: "Ponto digital",
+    image: DigitalPointImage,
+  },
+  {
+    name: "Contato",
+    image: ContactImage,
+  },
+];
+
 export default function MainPage() {
   return (
     <>
@@ -59,8 +93,78 @@ export default function MainPage() {
       <section>
         <Image src={ExampleImage} alt='example image' />
       </section>
-      <section className='flex flex-col justify-center items-center'>
+      <section className='
+        flex flex-col justify-center items-center
+        m-10
+      '>
         <ImageCarousel />
+      </section>
+
+      <section
+        className='
+          m-10
+        '
+      >
+        <div className="mb-8">
+          <button 
+            className="
+              w-full bg-[#1E88E5] text-white py-3 rounded-lg
+              text-2xl font-bold
+            "
+          >
+              Acessar Rápido
+          </button>
+        </div>
+
+        {/* Icon Navigation */}
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-4 mb-8">
+          {rapidAccessMenu.map((item, index) => (
+            <Link href="#" key={index} className="flex flex-col items-center">
+              <div 
+                className="
+                  bg-[#FFE3AF] p-4 shadow-sm w-full aspect-square flex items-center justify-center
+                  border-4 border-[#FB6B2D]
+                  flex-col
+                  font-bold
+                "
+              >
+                <Image src={item.image} alt='Formaturas'/>
+                <span 
+                  className="
+                    text-2xl mt-1 text-center text-[#FB6B2D]
+                  "
+                >
+                  {item.name.toUpperCase()}
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+      
+      <section className='
+          flex
+        '
+      >
+        <div className='flex flex-1'>
+          {/* Google Maps */}
+        </div>
+        
+        <div className="
+            bg-[#3678ce] text-white p-4
+            flex flex-col flex-1
+          "
+        >
+          <h3 className="text-sm font-bold mb-2">COMO CHEGAR NO CRC UNIVASF</h3>
+          <div className="flex items-center mb-2">
+            <div className="mr-2">📍</div>
+            <div className="text-xs">Av. Dr. Luiz, 1.001 - Londrina</div>
+          </div>
+          <div className="flex items-center">
+            <div className="mr-2">📞</div>
+            <div className="text-xs">(43) 3375-7000</div>
+          </div>
+        </div>
       </section>
     </>
   );
