@@ -14,6 +14,7 @@ import NewsImage from '@/public/assets/rapid_access/news.png';
 import ContactImage from '@/public/assets/rapid_access/Contact.png';
 import DigitalPointImage from '@/public/assets/rapid_access/DigitalPoint.png';
 import MakerColonyImage from '@/public/assets/rapid_access/MakerColony.png';
+import Footer from '@/components/Footer';
 
 export const rapidAccessMenu = [
   {
@@ -89,9 +90,11 @@ export default function MainPage() {
           </ul>
         </nav>
       </header>
+
       <section>
         <Image src={ExampleImage} alt='example image' />
       </section>
+
       <section className='
         flex flex-col justify-center items-center
         m-10
@@ -175,6 +178,8 @@ export default function MainPage() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </>
   );
 }
