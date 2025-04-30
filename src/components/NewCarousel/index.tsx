@@ -109,20 +109,7 @@ const NewsCarousel = () => {
         ))}
       </Slider>
 
-      {/* Paginação numérica */}
-      <div className="flex justify-center mt-6 gap-2">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-          <button
-            key={num}
-            className={`w-8 h-8 rounded-full flex items-center justify-center font-bold ${
-              num === currentSlide + 1 ? "bg-[#FF6B00] text-white" : "bg-[#FFB800] text-black"
-            }`}
-            onClick={() => setCurrentSlide(num - 1)}
-          >
-            {num}
-          </button>
-        ))}
-      </div>
+      <div className="h-10"></div>
     </div>
   )
 }

@@ -50,14 +50,13 @@ export default function NewsPage() {
             <div className="flex items-center bg-white rounded-full overflow-hidden pr-2">
               <input
                 type="text"
-                placeholder="pesquise uma notícia"
+                placeholder="Pesquise uma notícia"
                 className="w-full py-2 px-4 outline-none"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
               <div className="flex items-center">
-                <Search className="h-5 w-5 text-gray-400" />
-                <Image src="/placeholder.svg?height=24&width=24" alt="Google" width={24} height={24} className="ml-1" />
+                <Search className="h-5 text-gray-400" />
               </div>
             </div>
           </div>
