@@ -63,27 +63,27 @@ export default function MainPage() {
               </Link>
             </li>
             <li>
-              <Link href="/projetos" className="hover:text-gray-200">
+              <Link href="/projects" className="hover:text-gray-200">
                 Projetos
               </Link>
             </li>
             <li>
-              <Link href="/noticias" className="hover:text-gray-200">
+              <Link href="/news" className="hover:text-gray-200">
                 Notícias
               </Link>
             </li>
             <li>
-              <Link href="/equipe" className="hover:text-gray-200">
+              <Link href="/staff" className="hover:text-gray-200">
                 Equipe CRC
               </Link>
             </li>
             <li>
-              <Link href="/galeria" className="hover:text-gray-200">
+              <Link href="/galery" className="hover:text-gray-200">
                 Galeria
               </Link>
             </li>
             <li>
-              <Link href="/contato" className="hover:text-gray-200">
+              <Link href="/contact" className="hover:text-gray-200">
                 Informações de contato
               </Link>
             </li>
