@@ -29,6 +29,15 @@ export default function Layout({
               </Link>
             </li>
             <li>
+            <a
+              href="https://crc.univasf.edu.br/courses/"
+              rel="noopener noreferrer"
+              className="text-blue-300 hover:text-blue-500"
+            >
+              Cursos
+            </a>
+            </li>
+            <li>
               <Link href="/projects" className="hover:text-gray-200">
                 Projetos
               </Link>
