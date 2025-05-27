@@ -10,8 +10,12 @@ import ExampleImage from '@/public/assets/projects/project1/image1.png';
 
 import Footer from '@/components/Footer';
 import { rapidAccessMenu } from '@/constants/rapidAccessMenu';
+import Map from '@/components/Map';
 
 export default function MainPage() {
+
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '';
+
   return (
     <>
       <header className="bg-white shadow-md">
@@ -121,9 +125,16 @@ export default function MainPage() {
       <section className='flex'>
         <div className='
           flex flex-1 
-          bg-amber-400 p-4 h-60
+          bg-amber-400 p-0
         '>
           {/* Google Maps */}
+          {
+            apiKey ? (
+            <Map apiKey={apiKey} />
+            ) : (
+              <p>API Key não definida</p>
+            )
+          }
         </div>
         
         <div className="
@@ -142,7 +153,7 @@ export default function MainPage() {
             <div className="
               text-sm sm:text-base md:text-lg lg:text-lg
             ">
-              Av. Dr. Luiz, 1.001 - Londrina
+              Rod. BA-210, Km 4, S/n - Malhada da Areia, Juazeiro - BA
             </div>
           </div>
           <div className="flex items-center">
@@ -150,7 +161,7 @@ export default function MainPage() {
             <div className="
               text-sm sm:text-base md:text-lg lg:text-lg
             ">
-              (43) 3375-7000
+              (XX) XXXX-XXXX
             </div>
           </div>
         </div>
