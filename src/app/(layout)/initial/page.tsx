@@ -73,7 +73,7 @@ export default function MainPage() {
       </header>
 
       <section>
-        <Image src={ExampleImage} alt='example image' />
+        {/* <Image src={ExampleImage} alt='example image' /> */}
       </section>
 
       <section className='
