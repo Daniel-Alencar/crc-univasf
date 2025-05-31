@@ -98,7 +98,7 @@ export default function MainPage() {
 
         <div className="grid grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
           {rapidAccessMenu.map((item, index) => (
-            <Link href="#" key={index} className="flex flex-col items-center">
+            <Link href={item.link} key={index} className="flex flex-col items-center">
               <div 
                 className="
                   bg-[#FFE3AF] p-4 shadow-sm w-full aspect-square
@@ -127,7 +127,6 @@ export default function MainPage() {
           flex flex-1 
           bg-amber-400 p-0
         '>
-          {/* Google Maps */}
           {
             apiKey ? (
             <Map apiKey={apiKey} />
@@ -157,12 +156,14 @@ export default function MainPage() {
             </div>
           </div>
           <div className="flex items-center">
-            <div className="mr-2">📞</div>
-            <div className="
-              text-sm sm:text-base md:text-lg lg:text-lg
-            ">
-              (XX) XXXX-XXXX
-            </div>
+            {/* 
+              <div className="mr-2">📞</div>
+              <div className="
+                text-sm sm:text-base md:text-lg lg:text-lg
+              ">
+                (XX) XXXX-XXXX
+              </div>
+            */}
           </div>
         </div>
       </section>

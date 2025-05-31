@@ -55,13 +55,15 @@ export default function Footer() {
           }
         </div>
         <div className="flex gap-4 text-xl">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin className="hover:text-gray-300" />
-          </a>
-          <a href="mailto:email@example.com" target="_blank" rel="noopener noreferrer">
+          {/* 
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin className="hover:text-gray-300" />
+            </a>
+          */}
+          <a href="mailto:crc@univasf.edu.br" target="_blank" rel="noopener noreferrer">
             <SiGmail className="hover:text-gray-300" />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/crcunivasf/" target="_blank" rel="noopener noreferrer">
             <FaInstagram className="hover:text-gray-300" />
           </a>
         </div>

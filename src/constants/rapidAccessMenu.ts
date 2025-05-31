@@ -9,25 +9,31 @@ export const rapidAccessMenu = [
   {
     name: "Cursos",
     image: CourseImage,
+    link: "https://crc.univasf.edu.br/courses/"
   },
   {
     name: "Colônia Maker",
     image: MakerColonyImage,
+    link: "#"
   },
   {
     name: "Notícias",
     image: NewsImage,
+    link: "http://localhost:3000/news"
   },
   {
     name: "Formaturas",
     image: FormationImage,
+    link: "#"
   },
   {
     name: "Ponto digital",
     image: DigitalPointImage,
+    link: "#"
   },
   {
     name: "Contato",
     image: ContactImage,
+    link: "mailto:crc@univasf.edu.br"
   },
 ];
