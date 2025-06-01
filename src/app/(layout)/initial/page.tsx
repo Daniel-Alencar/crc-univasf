@@ -6,7 +6,7 @@ import Image from 'next/image';
 import ImageCarousel from '@/components/Carousel';
 
 import Logo from '@/public/assets/logo.png';
-import ExampleImage from '@/public/assets/projects/project1/image1.png';
+import ExampleImage from '@/public/assets/projects/project1/image2.jpeg';
 
 import Footer from '@/components/Footer';
 import { rapidAccessMenu } from '@/constants/rapidAccessMenu';
@@ -73,9 +73,9 @@ export default function MainPage() {
       </header>
 
       <section>
-        {/* <Image src={ExampleImage} alt='example image' /> */}
-      </section>
-
+       { <Image src={ExampleImage} alt='example image' /> } 
+      </section> 
+ 
       <section className='
         flex flex-col justify-center items-center
         m-10

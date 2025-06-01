@@ -8,29 +8,30 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from 'next/image';
 
 import Image1 from "@/public/assets/projects/project2/image1.png";
-import Image2 from "@/public/assets/projects/project2/image2.png";
-import Image3 from "@/public/assets/projects/project2/image1.png";
-import Image4 from "@/public/assets/projects/project2/image1.png";
+import Image2 from "@/public/assets/projects/project2/image4.png";
+import Image3 from "@/public/assets/projects/project2/image3.jpeg";
+import Image4 from "@/public/assets/projects/project2/image5.png";
+import { Bold } from "lucide-react";
 
 const sliderComponents = [
   {
-    title: "Título 1",
-    description: "Descrição 1",
+    title: "Aqui tem Inclusão!",
+    description: "Acreditamos que o acesso ao conhecimento digital é um direito de todos. Por isso, nossa equipe se dedica a oferecer capacitação de excelência em competências digitais, promovendo inclusão, autonomia e oportunidades. Nosso trabalho é voltado especialmente para comunidades historicamente afastadas do universo digital — como povos indígenas, fundo e fecho de pasto, quilombolas, ribeirinhos, agricultores familiares, assentados e pessoas em situação de vulnerabilidade social, exclusão socioeconômica e digital. Levamos tecnologia onde ela ainda não chegou, construindo pontes para um futuro mais justo, conectado e inclusivo. ",
     image: Image1,
   },
   {
-    title: "Título 2",
-    description: "Descrição 2",
+    title: "Nossos Parceiros",
+    description: "O CRC UNIVASF – Centro de Recondicionamento de Computadores da UNIVASF – atua em parceria com o Ministério das Comunicações (MCOM) e o Governo Federal para ampliar o acesso à tecnologia em comunidades de todo o Brasil. Juntos, realizamos a doação de computadores recondicionados para a instalação de Pontos de Inclusão Digital e a oferta de capacitação introdutória no universo digital. Essa união fortalece nosso compromisso com a inclusão digital, a sustentabilidade e a transformação social. Por meio dessa rede colaborativa, conectamos pessoas, criamos oportunidades e promovemos cidadania digital onde ela é mais necessária.",
     image: Image2,
   },
   {
-    title: "Título 3",
-    description: "Descrição 3",
+    title: "Colonia Maker",
+    description: "Um dos nossos grandes projetos é a Colônia Maker! Trata-se de colônia de férias para crianças de baixa renda com o foco em tecnologia. As atividades incluem: impressão 3D, uso de scanner, óculos de realidade virtual, drones, desmontagem e montagem de computadores, informatica básica, confecção de autômatos, manuseio do sistema operacional Linux, educação ambiental e cidadania",
     image: Image3,
   },
   {
-    title: "Título 4",
-    description: "Descrição 4",
+    title: "Cursos Gratuitos em nossa Plataforma!",
+    description: "Venha conhecer a nossa mais nova Plataforma Digital, especialmente desenvolvida para oferecer cursos gratuitos e exclusivos que abrangem todos os aspectos da inclusão digital. Com conteúdos acessíveis e didáticos, você poderá vivenciar a experiência do CRC UNIVASF diretamente da sua casa, de forma prática e confortável, sem precisar sair do sofá. Nosso objetivo é democratizar o acesso ao conhecimento tecnológico, conectando você a um universo de oportunidades e aprendizado.",
     image: Image4,
   },
 ];
@@ -41,11 +42,11 @@ const Carousel = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 100,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 10000,
     arrows: false,
     afterChange: (index: number) => setCurrentSlide(index),
     customPaging: (i: number) => (
