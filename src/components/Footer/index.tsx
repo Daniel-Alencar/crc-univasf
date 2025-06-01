@@ -26,7 +26,7 @@ const partnersLogos = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#112C4D] text-white py-2 flex justify-center">
+    <footer className="bg-[#abd0f3] text-white py-2 flex justify-center">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex gap-6 text-sm">
           
