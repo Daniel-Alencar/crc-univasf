@@ -6,7 +6,7 @@ import { Search } from "lucide-react"
 import NewsCarousel from "@/components/NewCarousel"
 
 // Imagens de exemplo para as notícias em destaque
-import NewsImage from "@/public/assets/projects/project2/image1.png"
+import NewsImage from "@/public/assets/projects/project3/1.jpeg"
 
 const featuredNews = [
   {

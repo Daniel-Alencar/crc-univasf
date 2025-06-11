@@ -10,7 +10,7 @@ import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 // Imagem de exemplo para o carrossel
-import NewsImage from "@/public/assets/projects/project2/image1.png"
+import NewsImage from "@/public/assets/projects/project3/1.jpeg"
 
 const newsItems = [
   {
