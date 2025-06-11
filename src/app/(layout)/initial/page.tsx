@@ -11,6 +11,7 @@ import ExampleImage from '@/public/assets/equipe CRC.jpeg';
 import Footer from '@/components/Footer';
 import { rapidAccessMenu } from '@/constants/rapidAccessMenu';
 import Map from '@/components/Map';
+import YouTubeEmbed from '@/components/YoutubeEmbed';
 
 export default function MainPage() {
 
@@ -81,6 +82,23 @@ export default function MainPage() {
         m-10
       '>
         <ImageCarousel />
+      </section>
+
+      <section className='
+        m-10
+        border rounded-lg shadow-md my-8 p-4
+        flex gap-4
+      '>
+        <YouTubeEmbed 
+          title={"Site do CRC"}
+          description={""}
+          videoId={"QjvzCTqkBDQ"}
+        />
+        <YouTubeEmbed 
+          title={"Plataforma de Cursos"}
+          description={""}
+          videoId={"QjvzCTqkBDQ"}
+        />
       </section>
 
       <section
