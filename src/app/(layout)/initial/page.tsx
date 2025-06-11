@@ -6,7 +6,7 @@ import Image from 'next/image';
 import ImageCarousel from '@/components/Carousel';
 
 import Logo from '@/public/assets/logo.png';
-import ExampleImage from '@/public/assets/projects/project1/image2.jpeg';
+import ExampleImage from '@/public/assets/equipe CRC.jpeg';
 
 import Footer from '@/components/Footer';
 import { rapidAccessMenu } from '@/constants/rapidAccessMenu';
@@ -156,14 +156,16 @@ export default function MainPage() {
             </div>
           </div>
           <div className="flex items-center">
-            {/* 
+            {
+            /* 
               <div className="mr-2">📞</div>
               <div className="
                 text-sm sm:text-base md:text-lg lg:text-lg
               ">
                 (XX) XXXX-XXXX
               </div>
-            */}
+            */
+            }
           </div>
         </div>
       </section>

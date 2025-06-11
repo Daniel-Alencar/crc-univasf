@@ -7,11 +7,10 @@ import "slick-carousel/slick/slick-theme.css";
 
 import Image from 'next/image';
 
-import Image1 from "@/public/assets/projects/project2/image1.png";
-import Image2 from "@/public/assets/projects/project2/image4.png";
-import Image3 from "@/public/assets/projects/project2/image3.jpeg";
-import Image4 from "@/public/assets/projects/project2/image5.png";
-import { Bold } from "lucide-react";
+import Image1 from "@/public/assets/carrousel/image1.png";
+import Image2 from "@/public/assets/carrousel/image2.png";
+import Image3 from "@/public/assets/carrousel/image3.jpeg";
+import Image4 from "@/public/assets/carrousel/image4.png";
 
 const sliderComponents = [
   {
