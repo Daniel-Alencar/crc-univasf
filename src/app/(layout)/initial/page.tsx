@@ -84,22 +84,36 @@ export default function MainPage() {
         <ImageCarousel />
       </section>
 
-      <section className='
-        m-10
-        border rounded-lg shadow-md my-8 p-4
-        flex gap-4
-      '>
-        <YouTubeEmbed 
-          title={"Site do CRC"}
-          description={""}
-          videoId={"QjvzCTqkBDQ"}
-        />
-        <YouTubeEmbed 
-          title={"Plataforma de Cursos"}
-          description={""}
-          videoId={"QjvzCTqkBDQ"}
-        />
-      </section>
+      <section className="
+  m-10
+  max-w-5xl mx-auto
+  bg-gradient-to-r from-orange-500 to-yellow-400
+  px-6 py-6 shadow-lg
+  flex justify-center items-center space-x-8
+  text-white font-semibold
+  rounded-2xl
+">
+  <div className="flex flex-col items-center max-w-md w-full">
+    <YouTubeEmbed 
+      title="Conheça a Colônia Maker"
+      description=""
+      videoId="gZG9AnddsM4"
+    />
+  </div>
+
+  <div className="flex flex-col items-center max-w-md w-full">
+    <YouTubeEmbed 
+      title="Formatura de jovens quilombolas"
+      description=""
+      videoId="Sw3kMJD6ABo"
+    />
+  </div>
+</section>
+
+
+
+
+
 
       <section
         className='m-10'>
