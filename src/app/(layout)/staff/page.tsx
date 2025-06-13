@@ -7,7 +7,7 @@ import TeamMember from "@/components/TeamMember";
 
 import Alec from '@/public/assets/staff/Alec.jpeg';
 import AnaLarissa from '@/public/assets/staff/Ana Larissa.jpeg';
-import Daniel from '@/public/assets/staff/Alec.jpeg';
+import Daniel from '@/public/assets/staff/Daniel.jpeg';
 import Gabriel from '@/public/assets/staff/Alec.jpeg';
 import Fernanda from '@/public/assets/staff/Fernanda.jpeg';
 import Flora from '@/public/assets/staff/Flora.jpeg';
@@ -27,8 +27,9 @@ const coordinators = [
   {
     name: "Márcia Bento Moreira",
     occupation: "Servidora Pública na UNIVASF",
-    projectRole: "CRC Coordenadora Geral",
+    projectRole: "Coordenadora Geral",
     linkedinUrl: "www.linkedin.com/in/marcia-bento-moreira-964b6078",
+    lattesUrl: "",
     emailUrl: "mailto:marcia.moreira@univasf.edu.br",
     imageUrl: Marcia.src,
   },
@@ -36,47 +37,6 @@ const coordinators = [
 
 // Dados de exemplo para os auxiliares
 const assistants = [
-  {
-    name: "Alec Moreira Marques",
-    occupation: "Estudante",
-    projectRole: "Monitor",
-    linkedinUrl: "",
-    emailUrl: "",
-    imageUrl: Alec.src,
-  },
-  {
-    name: "Daniel Alencar Penha Carvalho",
-    occupation: "Estudante",
-    projectRole: "Monitor",
-    linkedinUrl: "",
-    emailUrl: "",
-    imageUrl: Daniel.src,
-  },
-  {
-    name: "Gabriel",
-    occupation: "Estudante",
-    projectRole: "Monitor",
-    linkedinUrl: "",
-    emailUrl: "",
-    imageUrl: Gabriel.src,
-  },
-  {
-    name: "Ana Larissa",
-    occupation: "Estudante",
-    projectRole: "Mídia/Instagram",
-    linkedinUrl: "https://www.linkedin.com/in/ana-larissa-bezerra-a37b80145/",
-    emailUrl: "mailto:larissa.ana1244@gmail.com",
-    imageUrl: AnaLarissa.src,
-  },
-  {
-    name: "Flora Romanelli Assumpção",
-    occupation: "Professora de Artes Visuais",
-    projectRole: "Colaboradora",
-    linkedinUrl: "",
-    lattesUrl: "http://lattes.cnpq.br/2919589905571219",
-    emailUrl: "mailto:flora.assumpcao@univasf.edu.br",
-    imageUrl: Flora.src,
-  },
   {
     name: "Henrique Takashi Idogava",
     occupation: "Professor da UNIVASF",
@@ -86,12 +46,28 @@ const assistants = [
     imageUrl: HenriqueTakashi.src,
   },
   {
-    name: "Jackson Pereira Lopes",
-    occupation: "Técnico em informática",
-    projectRole: "Manutenção de computadores, professor de Hardware e Software, instalação de PID",
-    linkedinUrl: "",
-    emailUrl: "mailto:jacksonpereiralopes@gmail.com",
-    imageUrl: Jackson.src,
+    name: "Flora Romanelli Assumpção",
+    occupation: "Professora de Artes Visuais",
+    projectRole: "Colaboradora",
+    lattesUrl: "http://lattes.cnpq.br/2919589905571219",
+    emailUrl: "mailto:flora.assumpcao@univasf.edu.br",
+    imageUrl: Flora.src,
+  },
+  {
+    name: "Clecia Simone Gonçalves Rosa Pacheco",
+    occupation: "Docente do IFSertão PE",
+    projectRole: "Coordenação de Pesquisa",
+    linkedinUrl: "https://br.linkedin.com/in/clecia-pacheco-28217973",
+    emailUrl: "mailto:clecia.pacheco@gmail.com",
+    imageUrl: Simone.src,
+  },
+  {
+    name: "Weslley Darlyson da Silva",
+    occupation: "Professor",
+    projectRole: "Equipe estratégica",
+    lattesUrl: "http://lattes.cnpq.br/9137986535767419",
+    emailUrl: "mailto:⁠weslleydarlyson@hotmail.com",
+    imageUrl: Weslley.src,
   },
   {
     name: "Jaldo Pereira Lopes",
@@ -100,6 +76,13 @@ const assistants = [
     linkedinUrl: "http://www.linkedin.com/in/jaldo-lopes-24a7041a0",
     emailUrl: "mailto:jaldo.lopes@univasf.edu.br",
     imageUrl: Jaldo.src,
+  },
+  {
+    name: "Jackson Pereira Lopes",
+    occupation: "Técnico em informática",
+    projectRole: "Manutenção de computadores, professor de Hardware e Software, instalação de PID",
+    emailUrl: "mailto:jacksonpereiralopes@gmail.com",
+    imageUrl: Jackson.src,
   },
   {
     name: "Luiz Carlos Dantas Souza",
@@ -122,35 +105,16 @@ const assistants = [
     name: "Sileide Dias das Neves",
     occupation: "Colaborador",
     projectRole: "Colaborador",
-    linkedinUrl: "",
     emailUrl: "mailto:sileided.neves@gmail.com",
     imageUrl: Sileide.src,
-  },
-  {
-    name: "Clecia Simone Gonçalves Rosa Pacheco",
-    occupation: "Docente do IFSertãoPE",
-    projectRole: "Coordenação de Pesquisa",
-    linkedinUrl: "https://br.linkedin.com/in/clecia-pacheco-28217973",
-    emailUrl: "mailto:clecia.pacheco@gmail.com",
-    imageUrl: Simone.src,
   },
   {
     name: "Thiago Batista de Sousa",
     occupation: "Integrante do CRC Univasf",
     projectRole: "Técnico de apoio ao usuário de informática/professor de Educação Ambiental",
     lattesUrl: "https://lattes.cnpq.br/1290738666797047",
-    linkedinUrl: "",
     emailUrl: "mailto:dthiagobatista@gmail.com",
     imageUrl: Thiago.src,
-  },
-  {
-    name: "Weslley Darlyson da Silva",
-    occupation: "Professor",
-    projectRole: "Equipe estratégica",
-    linkedinUrl: "",
-    lattesUrl: "http://lattes.cnpq.br/9137986535767419",
-    emailUrl: "mailto:⁠weslleydarlyson@hotmail.com",
-    imageUrl: Weslley.src,
   },
   {
     name: "Fernanda Erie Yamaguchi",
@@ -160,6 +124,37 @@ const assistants = [
     emailUrl: "mailto:yamaguchierie@gmail.com",
     imageUrl: Fernanda.src,
   },
+  {
+    name: "Alec Moreira Marques",
+    occupation: "Estudante de Engenharia da Computação",
+    projectRole: "Monitor e Desenvolvedor",
+    linkedinUrl: "",
+    emailUrl: "",
+    imageUrl: Alec.src,
+  },
+  {
+    name: "Daniel Alencar Penha Carvalho",
+    occupation: "Estudante de Engenharia da Computação",
+    projectRole: "Monitor e Desenvolvedor",
+    linkedinUrl: "https://www.linkedin.com/in/daniel746",
+    emailUrl: "daniel.apcarvalho@discente.univasf.edu.br",
+    imageUrl: Daniel.src,
+  },
+  {
+    name: "Gabriel Dias Ferraz",
+    occupation: "Estudante de Engenharia Mecânica",
+    projectRole: "Monitor",
+    emailUrl: "gabriel.diasferraz2001@gmail.com",
+    imageUrl: Gabriel.src,
+  },
+  {
+    name: "Ana Larissa",
+    occupation: "Estudante",
+    projectRole: "Mídia/Instagram",
+    linkedinUrl: "https://www.linkedin.com/in/ana-larissa-bezerra-a37b80145/",
+    emailUrl: "mailto:larissa.ana1244@gmail.com",
+    imageUrl: AnaLarissa.src,
+  },
 ]
 
 export default function StaffPage() {
@@ -168,9 +163,7 @@ export default function StaffPage() {
       <h1 className="text-4xl font-bold text-gray-900 mb-6">Equipe CRC</h1>
 
       <p className="text-gray-800 mb-12 max-w-4xl">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et commodo diam, eget ultrices lorem. Fusce
-        ultrices justo arcu, vitae dapibus urna tincidunt vel. Nullam porta laoreet ex, sit amet scelerisque metus
-        pretium sit amet. Quisque vitae enim accumsan, ultricies risus et, euismod ligula.
+        Nada do que o CRC realiza — das doações de computadores às oficinas da Colônia Maker — seria possível sem uma equipe dedicada e apaixonada. Somos estudantes, professores e voluntários unidos pelo propósito de levar tecnologia a quem mais precisa, seja em comunidades indígenas, quilombolas ou escolas públicas. Cada integrante contribui com seu talento: uns recondicionam máquinas, outros ensinam informática, coordenam oficinas ou pensam a logística por trás das ações. Juntos, tornamos real o que seria apenas intenção: inclusão digital com afeto, criatividade e compromisso social.
       </p>
 
       {/* Seção Coordenadores */}
@@ -187,6 +180,7 @@ export default function StaffPage() {
               linkedinUrl={coordinator.linkedinUrl}
               emailUrl={coordinator.emailUrl}
               imageUrl={coordinator.imageUrl}
+              lattesUrl={coordinator.lattesUrl}
             />
           ))}
         </div>
@@ -194,7 +188,7 @@ export default function StaffPage() {
 
       {/* Seção Auxiliares */}
       <section className="mb-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Auxiliares</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Colaboradores</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {assistants.map((assistant, index) => (
@@ -206,6 +200,7 @@ export default function StaffPage() {
               linkedinUrl={assistant.linkedinUrl}
               emailUrl={assistant.emailUrl}
               imageUrl={assistant.imageUrl}
+              lattesUrl={assistant.lattesUrl}
             />
           ))}
         </div>
