@@ -8,7 +8,7 @@ import TeamMember from "@/components/TeamMember";
 import Alec from '@/public/assets/staff/Alec.jpeg';
 import AnaLarissa from '@/public/assets/staff/Ana Larissa.jpeg';
 import Daniel from '@/public/assets/staff/Daniel.jpeg';
-import Gabriel from '@/public/assets/staff/Alec.jpeg';
+import Gabriel from '@/public/assets/staff/Gabriel.jpeg';
 import Fernanda from '@/public/assets/staff/Fernanda.jpeg';
 import Flora from '@/public/assets/staff/Flora.jpeg';
 import HenriqueTakashi from '@/public/assets/staff/Henrique Takashi.jpeg';
@@ -153,6 +153,7 @@ const assistants = [
     occupation: "Estudante de Engenharia Mecânica",
     projectRole: "Monitor",
     emailUrl: "mailto:gabriel.diasferraz2001@gmail.com",
+    linkedinUrl: "https://www.linkedin.com/in/gabriel-dias-9a2536266",
     imageUrl: Gabriel.src,
   },
   {
