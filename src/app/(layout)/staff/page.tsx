@@ -21,6 +21,7 @@ import Sileide from '@/public/assets/staff/Sileide.jpeg';
 import Simone from '@/public/assets/staff/Simone.jpeg';
 import Thiago from '@/public/assets/staff/Thiago.jpeg';
 import Weslley from '@/public/assets/staff/Weslley.jpeg';
+import Flavio from '@/public/assets/staff/Flavio.jpeg';
 
 // Dados de exemplo para os coordenadores
 const coordinators = [
@@ -93,6 +94,13 @@ const assistants = [
     imageUrl: LuizCarlos.src,
   },
   {
+    name: "Flávio Rocha",
+    occupation: "Técnico de Apoio ao usuário de Informática",
+    projectRole: "Técnico de Informática",
+    emailUrl: "mailto:flaviorocha.crc@gmail.com",
+    imageUrl: Flavio.src,
+  },
+  {
     name: "Antônio Sabino da Silva Filho",
     occupation: "Assistente em Administração da Univasf",
     projectRole: "Colaborador Técnico",
@@ -128,8 +136,8 @@ const assistants = [
     name: "Alec Moreira Marques",
     occupation: "Estudante de Engenharia da Computação",
     projectRole: "Monitor e Desenvolvedor",
-    linkedinUrl: "",
-    emailUrl: "",
+    linkedinUrl: "https://www.linkedin.com/in/alec-moreira-marques-4a3137241",
+    emailUrl: "mailto:alec.marques@discente.univasf.edu.br",
     imageUrl: Alec.src,
   },
   {
@@ -137,14 +145,14 @@ const assistants = [
     occupation: "Estudante de Engenharia da Computação",
     projectRole: "Monitor e Desenvolvedor",
     linkedinUrl: "https://www.linkedin.com/in/daniel746",
-    emailUrl: "daniel.apcarvalho@discente.univasf.edu.br",
+    emailUrl: "mailto:daniel.apcarvalho@discente.univasf.edu.br",
     imageUrl: Daniel.src,
   },
   {
     name: "Gabriel Dias Ferraz",
     occupation: "Estudante de Engenharia Mecânica",
     projectRole: "Monitor",
-    emailUrl: "gabriel.diasferraz2001@gmail.com",
+    emailUrl: "mailto:gabriel.diasferraz2001@gmail.com",
     imageUrl: Gabriel.src,
   },
   {
@@ -162,7 +170,7 @@ export default function StaffPage() {
     <div className="container mx-auto px-6 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-6">Equipe CRC</h1>
 
-      <p className="text-gray-800 mb-12 max-w-4xl">
+      <p className="text-gray-800 mb-12">
         Nada do que o CRC realiza — das doações de computadores às oficinas da Colônia Maker — seria possível sem uma equipe dedicada e apaixonada. Somos estudantes, professores e voluntários unidos pelo propósito de levar tecnologia a quem mais precisa, seja em comunidades indígenas, quilombolas ou escolas públicas. Cada integrante contribui com seu talento: uns recondicionam máquinas, outros ensinam informática, coordenam oficinas ou pensam a logística por trás das ações. Juntos, tornamos real o que seria apenas intenção: inclusão digital com afeto, criatividade e compromisso social.
       </p>
 
