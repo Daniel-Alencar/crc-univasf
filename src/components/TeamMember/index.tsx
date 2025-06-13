@@ -7,7 +7,7 @@ import Lattes from '@/public/assets/logo lattes.png'
 interface TeamMemberProps {
   name: string
   occupation: string
-  projectRole: string
+  projectRole: string | undefined
   linkedinUrl: string | undefined
   emailUrl: string
   lattesUrl: string | undefined

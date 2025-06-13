@@ -22,6 +22,8 @@ import Simone from '@/public/assets/staff/Simone.jpeg';
 import Thiago from '@/public/assets/staff/Thiago.jpeg';
 import Weslley from '@/public/assets/staff/Weslley.jpeg';
 import Flavio from '@/public/assets/staff/Flavio.jpeg';
+import FernandaSabrina from '@/public/assets/staff/Fernanda Sabrina.jpeg';
+import Ericles from '@/public/assets/staff/Ericles.jpeg';
 
 // Dados de exemplo para os coordenadores
 const coordinators = [
@@ -73,7 +75,7 @@ const assistants = [
   {
     name: "Jaldo Pereira Lopes",
     occupation: "Técnico em Telecomunicações",
-    projectRole: "Coordenador Técnico",
+    projectEriclesRole: "Coordenador Técnico",
     linkedinUrl: "http://www.linkedin.com/in/jaldo-lopes-24a7041a0",
     emailUrl: "mailto:jaldo.lopes@univasf.edu.br",
     imageUrl: Jaldo.src,
@@ -163,6 +165,21 @@ const assistants = [
     linkedinUrl: "https://www.linkedin.com/in/ana-larissa-bezerra-a37b80145/",
     emailUrl: "mailto:larissa.ana1244@gmail.com",
     imageUrl: AnaLarissa.src,
+  },
+  {
+    name: "Fernanda Sabrina",
+    occupation: "Assistente Administrativa",
+    projectRole: "Secretaria",
+    emailUrl: "mailto:fernandast.silva@gmail.com",
+    imageUrl: FernandaSabrina.src,
+  },
+  {
+    name: "Éricles da Silva Medrado",
+    occupation: "Engenheiro Agrônomo",
+    projectRole: "Equipe de educação ambiental",
+    emailUrl: "mailto:ericlesmedrado@gmail.com",
+    linkedinUrl: "https://br.linkedin.com/in/ericles-medrado",
+    imageUrl: Ericles.src,
   },
 ]
 
