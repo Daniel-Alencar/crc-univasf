@@ -24,18 +24,18 @@ export default function Layout({
         >
           <ul className="flex justify-center space-x-8 text-white font-semibold">
             <li>
-              <Link href="/" className="text-blue-300 hover:text-blue-500">
+              <Link href="/" className="hover:text-gray-200">
                 Início
               </Link>
             </li>
             <li>
-            <a
-              href="https://crc.univasf.edu.br/courses/"
-              rel="noopener noreferrer"
-              className="text-blue-300 hover:text-blue-500"
-            >
-              Cursos
-            </a>
+              <a
+                href="https://crc.univasf.edu.br/courses/"
+                rel="noopener noreferrer"
+                className="hover:text-gray-200"
+              >
+                Cursos
+              </a>
             </li>
             <li>
               <Link href="/projects" className="hover:text-gray-200">
