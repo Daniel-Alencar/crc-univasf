@@ -1,4 +1,5 @@
 import ProjectSection from "@/components/ProjectSection"
+import AosWrapper from "@/components/AosWrapper" // Importe o componente AosWrapper
 
 // Projeto 1
 import Image1Project1 from "@/public/assets/projects/project3/1.jpeg";
@@ -149,18 +150,20 @@ const projectsData = [
 
 export default function GaleryPage() {
   return (
-    <div className="container mx-auto px-6 py-8">
-      <h1 className="sr-only">Galeria de Projetos</h1>
+    <AosWrapper>
+      <div className="container mx-auto px-6 py-8">
+        <h1 className="sr-only">Galeria de Projetos</h1>
 
-      {projectsData.map((project) => (
-        <ProjectSection
-          key={project.id}
-          title={project.title}
-          description={project.description}
-          images={project.images}
-          projectId={project.id}
-        />
-      ))}
-    </div>
+        {projectsData.map((project) => (
+          <ProjectSection
+            key={project.id}
+            title={project.title}
+            description={project.description}
+            images={project.images}
+            projectId={project.id}
+          />
+        ))}
+      </div>
+    </AosWrapper>
   )
 }

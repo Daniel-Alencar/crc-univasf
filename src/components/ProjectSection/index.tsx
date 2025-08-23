@@ -15,7 +15,8 @@ interface ProjectSectionProps {
 
 export default function ProjectSection({ title, description, images, projectId }: ProjectSectionProps) {
   return (
-    <section className="mb-12">
+    // Adicione o atributo data-aos na tag <section>
+    <section className="mb-12" data-aos="fade-up">
       <div className="flex justify-between items-start mb-2">
         <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
       </div>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import ImageCarousel from '@/components/Carousel';
+import AosWrapper from "@/components/AosWrapper" // Importe o componente AosWrapper
 
 import Logo from '@/public/assets/logo.png';
 import ExampleImage from '@/public/assets/equipe CRC.jpeg';
@@ -18,16 +19,17 @@ export default function MainPage() {
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '';
 
   return (
-    <>
+    <AosWrapper>
       <header className="bg-white shadow-md">
         <div className="container mx-auto flex justify-between items-center py-4 px-6">
           <div className="flex items-center text-2xl font-bold">
-            <Image src={Logo} alt='crc univasf'/>
+            <Image src={Logo} alt='crc univasf' />
           </div>
         </div>
         
         <nav className="
           bg-gradient-to-r from-orange-500 to-yellow-400 px-6 py-3 shadow-lg"
+          data-aos="fade-down" // Animação para a barra de navegação
         >
           <ul className="flex justify-center space-x-8 text-white font-semibold">
             <li>
@@ -73,50 +75,47 @@ export default function MainPage() {
         </nav>
       </header>
 
-      <section>
-       { <Image src={ExampleImage} alt='example image' /> } 
+      <section data-aos="fade-up"> {/* Animação para a seção da imagem principal */}
+        { <Image src={ExampleImage} alt='example image' /> } 
       </section> 
- 
+  
       <section className='
         flex flex-col justify-center items-center
-        m-10
-      '>
+        m-10'
+        data-aos="zoom-in" // Animação para a seção do carrossel de imagens
+      >
         <ImageCarousel />
       </section>
 
       <section className="
-  m-10
-  max-w-5xl mx-auto
-  bg-gradient-to-r from-orange-500 to-yellow-400
-  px-6 py-6 shadow-lg
-  flex justify-center items-center space-x-8
-  text-white font-semibold
-  rounded-2xl
-">
-  <div className="flex flex-col items-center max-w-md w-full">
-    <YouTubeEmbed 
-      title="Conheça a Colônia Maker"
-      description=""
-      videoId="gZG9AnddsM4"
-    />
-  </div>
+        m-10
+        max-w-5xl mx-auto
+        bg-gradient-to-r from-orange-500 to-yellow-400
+        px-6 py-6 shadow-lg
+        flex justify-center items-center space-x-8
+        text-white font-semibold
+        rounded-2xl
+      "
+        data-aos="fade-left" // Animação para a seção dos vídeos do YouTube
+      >
+        <div className="flex flex-col items-center max-w-md w-full">
+          <YouTubeEmbed 
+            title="Conheça a Colônia Maker"
+            description=""
+            videoId="gZG9AnddsM4"
+          />
+        </div>
 
-  <div className="flex flex-col items-center max-w-md w-full">
-    <YouTubeEmbed 
-      title="Formatura de jovens quilombolas"
-      description=""
-      videoId="Sw3kMJD6ABo"
-    />
-  </div>
-</section>
+        <div className="flex flex-col items-center max-w-md w-full">
+          <YouTubeEmbed 
+            title="Formatura de jovens quilombolas"
+            description=""
+            videoId="Sw3kMJD6ABo"
+          />
+        </div>
+      </section>
 
-
-
-
-
-
-      <section
-        className='m-10'>
+      <section className='m-10' data-aos="fade-up"> {/* Animação para a seção de acesso rápido */}
         <div className="mb-8">
           <button 
             className="
@@ -130,7 +129,13 @@ export default function MainPage() {
 
         <div className="grid grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
           {rapidAccessMenu.map((item, index) => (
-            <Link href={item.link} key={index} className="flex flex-col items-center">
+            <Link 
+              href={item.link} 
+              key={index} 
+              className="flex flex-col items-center"
+              data-aos="zoom-in" // Animação para cada item individualmente
+              data-aos-delay={index * 100} // Adiciona um pequeno atraso para criar um efeito cascata
+            >
               <div 
                 className="
                   bg-[#FFE3AF] p-4 shadow-sm w-full aspect-square
@@ -139,7 +144,7 @@ export default function MainPage() {
                   font-bold
                 "
               >
-                <Image src={item.image} alt='Formaturas'/>
+                <Image src={item.image} alt='Formaturas' />
                 <span 
                   className="
                     text-sm sm:text-base md:text-lg lg:text-lg xl:text-2xl mt-1 text-center text-[#FB6B2D]
@@ -154,14 +159,14 @@ export default function MainPage() {
         </div>
       </section>
       
-      <section className='flex'>
+      <section className='flex' data-aos="fade-up"> {/* Animação para a seção do mapa e informações */}
         <div className='
           flex flex-1 
           bg-amber-400 p-0
         '>
           {
             apiKey ? (
-            <Map apiKey={apiKey} />
+              <Map apiKey={apiKey} />
             ) : (
               <p>API Key não definida</p>
             )
@@ -188,21 +193,11 @@ export default function MainPage() {
             </div>
           </div>
           <div className="flex items-center">
-            {
-            /* 
-              <div className="mr-2">📞</div>
-              <div className="
-                text-sm sm:text-base md:text-lg lg:text-lg
-              ">
-                (XX) XXXX-XXXX
-              </div>
-            */
-            }
           </div>
         </div>
       </section>
 
       <Footer />
-    </>
+    </AosWrapper>
   );
 }
