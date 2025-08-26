@@ -1,10 +1,10 @@
 import React from 'react';
-
 import Link from 'next/link';
 import Image from 'next/image';
+import AosWrapper from "@/components/AosWrapper";
+import ParticlesBackground from "@/components/Particles/ParticlesBackground";
 
-import TeamMember from "@/components/TeamMember";
-
+// Importações de todas as imagens da equipe
 import Alec from '@/public/assets/staff/Alec.jpeg';
 import AnaLarissa from '@/public/assets/staff/Ana Larissa.jpeg';
 import Daniel from '@/public/assets/staff/Daniel.jpeg';
@@ -36,7 +36,7 @@ const coordinators = [
     emailUrl: "mailto:marcia.moreira@univasf.edu.br",
     imageUrl: Marcia.src,
   },
-]
+];
 
 // Dados de exemplo para os auxiliares
 const assistants = [
@@ -75,7 +75,7 @@ const assistants = [
   {
     name: "Jaldo Pereira Lopes",
     occupation: "Técnico em Telecomunicações",
-    projectEriclesRole: "Coordenador Técnico",
+    projectRole: "Coordenador Técnico",
     linkedinUrl: "http://www.linkedin.com/in/jaldo-lopes-24a7041a0",
     emailUrl: "mailto:jaldo.lopes@univasf.edu.br",
     imageUrl: Jaldo.src,
@@ -181,56 +181,61 @@ const assistants = [
     linkedinUrl: "https://br.linkedin.com/in/ericles-medrado",
     imageUrl: Ericles.src,
   },
-]
+];
+
+const team = [...coordinators, ...assistants];
 
 export default function StaffPage() {
   return (
-    <div className="container mx-auto px-6 py-8">
-      <h1 className="text-4xl font-bold text-gray-900 mb-6">Equipe CRC</h1>
+    <div className="relative min-h-screen">
+      <div className="absolute inset-0 z-0">
+        <ParticlesBackground />
+      </div>
+      <AosWrapper>
+        <div className="container mx-auto px-6 py-8 relative z-10">
+          <h1 className="text-4xl font-bold text-gray-900 mb-6">Equipe CRC</h1>
 
-      <p className="text-gray-800 mb-12">
-        Nada do que o CRC realiza — das doações de computadores às oficinas da Colônia Maker — seria possível sem uma equipe dedicada e apaixonada. Somos estudantes, professores e voluntários unidos pelo propósito de levar tecnologia a quem mais precisa, seja em comunidades indígenas, quilombolas ou escolas públicas. Cada integrante contribui com seu talento: uns recondicionam máquinas, outros ensinam informática, coordenam oficinas ou pensam a logística por trás das ações. Juntos, tornamos real o que seria apenas intenção: inclusão digital com afeto, criatividade e compromisso social.
-      </p>
+          <p className="text-gray-800 mb-12">
+            Nada do que o CRC realiza — das doações de computadores às oficinas da Colônia Maker — seria possível sem uma equipe dedicada e apaixonada. Somos estudantes, professores e voluntários unidos pelo propósito de levar tecnologia a quem mais precisa, seja em comunidades indígenas, quilombolas ou escolas públicas. Cada integrante contribui com seu talento: uns recondicionam máquinas, outros ensinam informática, coordenam oficinas ou pensam a logística por trás das ações. Juntos, tornamos real o que seria apenas intenção: inclusão digital com afeto, criatividade e compromisso social.
+          </p>
 
-      {/* Seção Coordenadores */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Coordenadores</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {coordinators.map((coordinator, index) => (
-            <TeamMember
-              key={`coordinator-${index}`}
-              name={coordinator.name}
-              occupation={coordinator.occupation}
-              projectRole={coordinator.projectRole}
-              linkedinUrl={coordinator.linkedinUrl}
-              emailUrl={coordinator.emailUrl}
-              imageUrl={coordinator.imageUrl}
-              lattesUrl={coordinator.lattesUrl}
-            />
-          ))}
+          <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {team.map((member, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col items-center p-6 border-4 border-transparent hover:border-orange-500 transition-all duration-300 transform hover:scale-105"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <div className="w-32 h-32 rounded-full overflow-hidden mb-4 border-2 border-gray-300">
+                  <Image
+                    src={member.imageUrl}
+                    alt={member.name}
+                    width={128}
+                    height={128}
+                    objectFit="cover"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 text-center">{member.name}</h3>
+                <p className="text-sm text-gray-600 text-center">{member.projectRole}</p>
+                
+                <div className="mt-4 text-center">
+                  {member.linkedinUrl && (
+                    <Link href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:underline">
+                      LinkedIn
+                    </Link>
+                  )}
+                  {member.lattesUrl && (
+                    <Link href={member.lattesUrl} target="_blank" rel="noopener noreferrer" className="ml-2 text-orange-500 hover:underline">
+                      Lattes
+                    </Link>
+                  )}
+                </div>
+              </div>
+            ))}
+          </section>
         </div>
-      </section>
-
-      {/* Seção Auxiliares */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Colaboradores</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {assistants.map((assistant, index) => (
-            <TeamMember
-              key={`assistant-${index}`}
-              name={assistant.name}
-              occupation={assistant.occupation}
-              projectRole={assistant.projectRole}
-              linkedinUrl={assistant.linkedinUrl}
-              emailUrl={assistant.emailUrl}
-              imageUrl={assistant.imageUrl}
-              lattesUrl={assistant.lattesUrl}
-            />
-          ))}
-        </div>
-      </section>
+      </AosWrapper>
     </div>
-  )
+  );
 }

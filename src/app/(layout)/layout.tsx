@@ -1,18 +1,18 @@
-
 import Link from 'next/link';
 import Image from 'next/image';
+import React from 'react';
 
 import Logo from '@/public/assets/logo.png';
 import Footer from '@/components/Footer';
 
-export default function Layout({
+export default function StaffLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
     <>
-      <header className="bg-white shadow-md">
+      <header className="bg-white shadow-md z-20 relative">
         <div className="container mx-auto flex justify-between items-center py-4 px-6">
           <div className="flex items-center text-2xl font-bold">
             <Image src={Logo} alt='crc univasf'/>
@@ -20,7 +20,7 @@ export default function Layout({
         </div>
         
         <nav className="
-          bg-gradient-to-r from-orange-500 to-yellow-400 px-6 py-3 shadow-lg"
+          bg-gradient-to-r from-orange-500 to-yellow-400 px-6 py-3 shadow-lg z-20 relative"
         >
           <ul className="flex justify-center space-x-8 text-white font-semibold">
             <li>
@@ -66,7 +66,7 @@ export default function Layout({
         </nav>
       </header>
 
-      {children}
+      <main>{children}</main>
 
       <Footer />
     </>
