@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import AosWrapper from "../AosWrapper"
 
 interface ProjectImage {
   src: string
@@ -54,51 +55,55 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
   const canScrollRight = currentIndex < images.length - visibleImages
 
   return (
-    <div className="relative w-full my-6">
-      <div className="flex items-center">
-        <button
-          onClick={prevSlide}
-          className={`absolute left-0 z-10 p-2 rounded-full bg-orange-500 text-white ${
-            !canScrollLeft ? "opacity-50 cursor-not-allowed" : "hover:bg-orange-600"
-          }`}
-          disabled={!canScrollLeft}
-        >
-          <ChevronLeft size={24} />
-        </button>
-
-        <div className="w-full overflow-hidden" ref={containerRef}>
-          <div
-            className="flex transition-transform duration-300 ease-in-out gap-4"
-            style={{ transform: `translateX(-${currentIndex * (100 / visibleImages)}%)` }}
+    <AosWrapper>
+      <div className="relative w-full my-6">
+        <div className="flex items-center">
+          <button
+            onClick={prevSlide}
+            className={`absolute left-0 z-10 p-2 rounded-full bg-orange-500 text-white ${
+              !canScrollLeft ? "opacity-50 cursor-not-allowed" : "hover:bg-orange-600"
+            }`}
+            disabled={!canScrollLeft}
           >
-            {images.map((image, index) => (
-              <div
-                key={index}
-                className="flex-none"
-                style={{ width: `calc(${100 / visibleImages}% - ${((visibleImages - 1) * 16) / visibleImages}px)` }}
-              >
-                <Image
-                  src={image.src || "/placeholder.svg"}
-                  alt={image.alt}
-                  width={300}
-                  height={200}
-                  className="w-full h-48 object-cover rounded-md"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+            <ChevronLeft size={24} />
+          </button>
 
-        <button
-          onClick={nextSlide}
-          className={`absolute right-0 z-10 p-2 rounded-full bg-orange-500 text-white ${
-            !canScrollRight ? "opacity-50 cursor-not-allowed" : "hover:bg-orange-600"
-          }`}
-          disabled={!canScrollRight}
-        >
-          <ChevronRight size={24} />
-        </button>
+          <div className="w-full overflow-hidden" ref={containerRef}>
+            <div
+              className="flex transition-transform duration-300 ease-in-out gap-4"
+              style={{ transform: `translateX(-${currentIndex * (100 / visibleImages)}%)` }}
+            >
+              {images.map((image, index) => (
+                <div
+                  key={index}
+                  className="flex-none"
+                  style={{ 
+                    width: `calc(${100 / visibleImages}% - ${((visibleImages - 1) * 16) / visibleImages}px)` 
+                  }}
+                >
+                  <Image
+                    src={image.src || "/placeholder.svg"}
+                    alt={image.alt}
+                    width={300}
+                    height={200}
+                    className="w-full h-48 object-cover rounded-md"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <button
+            onClick={nextSlide}
+            className={`absolute right-0 z-10 p-2 rounded-full bg-orange-500 text-white ${
+              !canScrollRight ? "opacity-50 cursor-not-allowed" : "hover:bg-orange-600"
+            }`}
+            disabled={!canScrollRight}
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
       </div>
-    </div>
+    </AosWrapper>
   )
 }

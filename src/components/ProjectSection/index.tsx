@@ -1,5 +1,10 @@
+'use client';
+
 import Link from "next/link"
 import ProjectCarousel from "@/components/ProjectCarousel"
+import Image from "next/image"
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 
 interface ProjectImage {
   src: string
@@ -13,9 +18,13 @@ interface ProjectSectionProps {
   projectId: string
 }
 
-export default function ProjectSection({ title, description, images, projectId }: ProjectSectionProps) {
+export default function ProjectSection(
+  { title, description, images }: ProjectSectionProps
+) {
+
+  const [moreImages, setMoreImages] = useState(false);
+
   return (
-    // Adicione o atributo data-aos na tag <section>
     <section className="mb-12" data-aos="fade-up">
       <div className="flex justify-between items-start mb-2">
         <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
@@ -23,12 +32,52 @@ export default function ProjectSection({ title, description, images, projectId }
 
       <p className="text-gray-800 mb-4">{description}</p>
 
-      <ProjectCarousel images={images} />
-
-      <div className="flex justify-end">
-        <Link href={`/projects/${projectId}`} className="text-blue-700 hover:text-blue-900 font-medium">
-          Ver mais &gt;&gt;&gt;
-        </Link>
+      <AnimatePresence mode="wait">
+        {moreImages ? (
+          <motion.div
+            key="grid"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="flex flex-wrap gap-4 pb-5"
+          >
+            {
+              images.map((image, index) => (
+                <div key={index} className="flex-none">
+                  <Image
+                    src={image.src || "/placeholder.svg"}
+                    alt={image.alt}
+                    width={300}
+                    height={300}
+                    className="w-full h-48 object-cover rounded-md"
+                  />
+                </div>
+              ))
+            }
+          </motion.div>
+        ) : (
+          <motion.div
+            key="carousel"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+          >
+            <ProjectCarousel images={images} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      
+      <div className="flex justify-start">
+        <a 
+          onClick={() => setMoreImages(!moreImages)} 
+          className="
+            text-blue-700 hover:text-blue-900 font-medium
+            cursor-pointer
+          ">
+          {moreImages ? "Suprimir imagens" : "Ver todas as imagens"}
+        </a>
       </div>
     </section>
   )
