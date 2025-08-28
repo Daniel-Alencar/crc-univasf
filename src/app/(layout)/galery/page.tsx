@@ -84,7 +84,7 @@ const projectsData = [
     description: "",
     versions: [
       {
-        title: "Colônia Maker (Fevereiro 2025)",
+        title: "Colônia Maker (Janeiro 2025)",
         description: "Aulas de cursos diversos da colônia maker.",
         images: [
           { src: Image1Project2.src, alt: "Colônia maker 1" },
