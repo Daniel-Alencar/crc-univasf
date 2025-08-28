@@ -53,7 +53,7 @@ export default function Footer() {
           }
         </div>
         <div className="flex gap-4 text-xl mt-4 md:mt-0">
-          <a href="mailto:crc@univasf.edu.br" target="_blank" rel="noopener noreferrer">
+          <a href="/contact" target="" rel="noopener noreferrer">
             <SiGmail className="hover:text-gray-300" />
           </a>
           <a href="https://www.instagram.com/crcunivasf/" target="_blank" rel="noopener noreferrer">

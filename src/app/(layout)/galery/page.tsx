@@ -151,7 +151,7 @@ const projectsData = [
     versions: [
       {
         title: "Entrega de microchips às escolas estaduais de Petrolina e Juazeiro ",
-        description: "Entrega de 15.000 microchips e 800 computadores às escolas estaduais. O evento ocorreu no Cineteatro de Petrolina",
+        description: "Entrega de 15.000 microchips e 800 computadores às escolas estaduais. O evento ocorreu no Cineteatro de Petrolina.",
         images: [
           { src: Image1Project4.src, alt: "Evento chips 1" },
           { src: Image2Project4.src, alt: "Evento chips 2" },
@@ -163,39 +163,6 @@ const projectsData = [
           { src: Image8Project4.src, alt: "Evento chips 8" },
           { src: Image9Project4.src, alt: "Evento chips 9" },
           { src: Image10Project4.src, alt: "Evento chips 10" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "projeto-5",
-    title: "Reunião gerencial realizada em 2024 no MCom",
-    description: "Reunião gerencial no MCom em Brasília.",
-    versions: [
-      {
-        title: "Reunião no MCom - 2024",
-        description: "",
-        images: [
-          { src: Image1Project5.src, alt: "Reunião MCom 1" },
-          { src: Image2Project5.src, alt: "Reunião MCom 2" },
-          { src: Image3Project5.src, alt: "Reunião MCom 3" },
-          { src: Image4Project5.src, alt: "Reunião MCom 4" },
-          { src: Image5Project5.src, alt: "Reunião MCom 5" },
-          { src: Image6Project5.src, alt: "Reunião MCom 6" },
-          { src: Image7Project5.src, alt: "Reunião MCom 7" },
-          { src: Image8Project5.src, alt: "Reunião MCom 8" },
-          { src: Image9Project5.src, alt: "Reunião MCom 9" },
-          { src: Image10Project5.src, alt: "Reunião MCom 10" },
-          { src: Image11Project5.src, alt: "Reunião MCom 11" },
-          { src: Image12Project5.src, alt: "Reunião MCom 12" },
-          { src: Image13Project5.src, alt: "Reunião MCom 13" },
-          { src: Image14Project5.src, alt: "Reunião MCom 14" },
-          { src: Image15Project5.src, alt: "Reunião MCom 15" },
-          { src: Image16Project5.src, alt: "Reunião MCom 16" },
-          { src: Image17Project5.src, alt: "Reunião MCom 17" },
-          { src: Image18Project5.src, alt: "Reunião MCom 18" },
-          { src: Image19Project5.src, alt: "Reunião MCom 19" },
-          { src: Image20Project5.src, alt: "Reunião MCom 20" },
         ],
       },
     ],

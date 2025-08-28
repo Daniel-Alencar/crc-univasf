@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import ImageCarousel from '@/components/Carousel';
-import AosWrapper from "@/components/AosWrapper" // Importe o componente AosWrapper
+import AosWrapper from "@/components/AosWrapper";
 
 import Logo from '@/public/assets/logo.png';
 import ExampleImage from '@/public/assets/equipe CRC.jpeg';
@@ -13,6 +13,7 @@ import Footer from '@/components/Footer';
 import { rapidAccessMenu } from '@/constants/rapidAccessMenu';
 import Map from '@/components/Map';
 import YouTubeEmbed from '@/components/YoutubeEmbed';
+import FloatButton from '@/components/FloatButton';
 
 export default function MainPage() {
 
@@ -196,7 +197,7 @@ export default function MainPage() {
           </div>
         </div>
       </section>
-
+      
       <Footer />
     </AosWrapper>
   );
