@@ -27,7 +27,7 @@ export default function ProjectSection(
   return (
     <section className="mb-12" data-aos="fade-up">
       <div className="flex justify-between items-start mb-2">
-        <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
+        <h2 className="text-xl font-bold">{title}</h2>
       </div>
 
       <p className="text-gray-800 mb-4">{description}</p>

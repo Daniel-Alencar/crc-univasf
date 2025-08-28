@@ -1,5 +1,5 @@
 import ProjectSection from "@/components/ProjectSection"
-import AosWrapper from "@/components/AosWrapper" // Importe o componente AosWrapper
+import AosWrapper from "@/components/AosWrapper"
 
 // Projeto 1
 import Image1Project1 from "@/public/assets/projects/project3/1.jpeg";
@@ -61,89 +61,143 @@ import Image20Project5 from "@/public/assets/projects/project7/45.jpeg";
 const projectsData = [
   {
     id: "project-1",
-    title: "Entrega de Computadores para a Acenibra",
+    title: "Entrega de Computadores",
     description:
-      " Doação de 10 computadores a ACENIBRA - Associação Nipobrasileira de Juazeiro/BA. Recepcionados pelo vice presidente da associação .",
-    images: [
-      { src: Image1Project1.src, alt: "Colônia maker 1" },
-      { src: Image2Project1.src, alt: "Colônia maker 2" },
-      { src: Image3Project1.src, alt: "Colônia maker 3" },
-      { src: Image4Project1.src, alt: "Colônia maker 4" },
-      { src: Image5Project1.src, alt: "Colônia maker 5" },
+      "",
+    versions: [
+      {
+        title: "Entrega de Computadores para a Acenibra",
+        description: "Doação de 10 computadores a ACENIBRA - Associação Nipobrasileira de Juazeiro/BA.",
+        images: [
+          { src: Image1Project1.src, alt: "Entrega ACENIBRA 1" },
+          { src: Image2Project1.src, alt: "Entrega ACENIBRA 2" },
+          { src: Image3Project1.src, alt: "Entrega ACENIBRA 3" },
+          { src: Image4Project1.src, alt: "Entrega ACENIBRA 4" },
+          { src: Image5Project1.src, alt: "Entrega ACENIBRA 5" },
+        ],
+      },
     ],
   },
   {
     id: "projeto-2",
     title: "Colônia Maker",
-    description:
-      "Aulas de cursos diversos da colônia maker que ocorreu em fevereiro de 2025.",
-    images: [
-      { src: Image1Project2.src, alt: "Outro projeto 1" },
-      { src: Image2Project2.src, alt: "Outro projeto 2" },
-      { src: Image3Project2.src, alt: "Outro projeto 3" },
-      { src: Image4Project2.src, alt: "Outro projeto 4" },
-      { src: Image5Project2.src, alt: "Outro projeto 5" },
-      { src: Image6Project2.src, alt: "Outro projeto 6" },
-      { src: Image7Project2.src, alt: "Outro projeto 7" },
+    description: "",
+    versions: [
+      {
+        title: "Colônia Maker (Fevereiro 2025)",
+        description: "Aulas de cursos diversos da colônia maker.",
+        images: [
+          { src: Image1Project2.src, alt: "Colônia maker 1" },
+          { src: Image2Project2.src, alt: "Colônia maker 2" },
+          { src: Image3Project2.src, alt: "Colônia maker 3" },
+          { src: Image4Project2.src, alt: "Colônia maker 4" },
+          { src: Image5Project2.src, alt: "Colônia maker 5" },
+          { src: Image6Project2.src, alt: "Colônia maker 6" },
+          { src: Image7Project2.src, alt: "Colônia maker 7" },
+        ],
+      },
     ],
   },
   {
     id: "projeto-3",
-    title: "Primeira reunião da nova equipe CRC de 2025",
-    description:
-      "A nova equipe do CRC realiza a sua primeira reunião para discutir a respeito dos futuros projeto do CRC.",
-    images: [
-      { src: Image1Project3.src, alt: "Outro projeto 1" },
-      { src: Image2Project3.src, alt: "Outro projeto 2" },
-      { src: Image3Project3.src, alt: "Outro projeto 3" },
-      { src: Image4Project3.src, alt: "Outro projeto 4" },
-      { src: Image5Project3.src, alt: "Outro projeto 5" },
+    title: "Reuniões do CRC",
+    description: "",
+    versions: [
+      {
+        title: "Primeira reunião da nova equipe CRC de 2025",
+        description: "A nova equipe do CRC realiza sua primeira reunião.",
+        images: [
+          { src: Image1Project3.src, alt: "Reunião CRC 1" },
+          { src: Image2Project3.src, alt: "Reunião CRC 2" },
+          { src: Image3Project3.src, alt: "Reunião CRC 3" },
+          { src: Image4Project3.src, alt: "Reunião CRC 4" },
+          { src: Image5Project3.src, alt: "Reunião CRC 5" },
+        ],
+      },
+      {
+        title: "Reunião gerencial no MCom",
+        description: "Reunião gerencial no MCom em Brasília 2024.",
+        images: [
+          { src: Image1Project5.src, alt: "Reunião MCom 1" },
+          { src: Image2Project5.src, alt: "Reunião MCom 2" },
+          { src: Image3Project5.src, alt: "Reunião MCom 3" },
+          { src: Image4Project5.src, alt: "Reunião MCom 4" },
+          { src: Image5Project5.src, alt: "Reunião MCom 5" },
+          { src: Image6Project5.src, alt: "Reunião MCom 6" },
+          { src: Image7Project5.src, alt: "Reunião MCom 7" },
+          { src: Image8Project5.src, alt: "Reunião MCom 8" },
+          { src: Image9Project5.src, alt: "Reunião MCom 9" },
+          { src: Image10Project5.src, alt: "Reunião MCom 10" },
+          { src: Image11Project5.src, alt: "Reunião MCom 11" },
+          { src: Image12Project5.src, alt: "Reunião MCom 12" },
+          { src: Image13Project5.src, alt: "Reunião MCom 13" },
+          { src: Image14Project5.src, alt: "Reunião MCom 14" },
+          { src: Image15Project5.src, alt: "Reunião MCom 15" },
+          { src: Image16Project5.src, alt: "Reunião MCom 16" },
+          { src: Image17Project5.src, alt: "Reunião MCom 17" },
+          { src: Image18Project5.src, alt: "Reunião MCom 18" },
+          { src: Image19Project5.src, alt: "Reunião MCom 19" },
+          { src: Image20Project5.src, alt: "Reunião MCom 20" },
+        ],
+      }
     ],
   },
   {
     id: "projeto-4",
-    title: "Evento de entrega de microchips as escolas estaduais de Petrolina e Juazeiro",
+    title:
+      "Entrega de microchips",
     description:
-      "Evento de entrega de microchips as escolas estaduais de Petrolina e Juazeiro (15.000) e 800 computadores pelo CRC Univasf, evento realizado no Cineteatro de Petrolina, Univasf, com a presença da Presidente da ACENIBRA como representante dos PIDs que foram montados a partir das entregas e a secretaria da educação de Juazeiro na época e de Petrolina presentes.",
-    images: [
-      { src: Image1Project4.src, alt: "Outro projeto 1" },
-      { src: Image2Project4.src, alt: "Outro projeto 1" },
-      { src: Image3Project4.src, alt: "Outro projeto 1" },
-      { src: Image4Project4.src, alt: "Outro projeto 1" },
-      { src: Image5Project4.src, alt: "Outro projeto 1" },
-      { src: Image6Project4.src, alt: "Outro projeto 1" },
-      { src: Image7Project4.src, alt: "Outro projeto 1" },
-      { src: Image8Project4.src, alt: "Outro projeto 1" },
-      { src: Image9Project4.src, alt: "Outro projeto 1" },
-      { src: Image10Project4.src, alt: "Outro projeto 1" },
+      "",
+    versions: [
+      {
+        title: "Entrega de microchips às escolas estaduais de Petrolina e Juazeiro ",
+        description: "Entrega de 15.000 microchips e 800 computadores às escolas estaduais. O evento ocorreu no Cineteatro de Petrolina",
+        images: [
+          { src: Image1Project4.src, alt: "Evento chips 1" },
+          { src: Image2Project4.src, alt: "Evento chips 2" },
+          { src: Image3Project4.src, alt: "Evento chips 3" },
+          { src: Image4Project4.src, alt: "Evento chips 4" },
+          { src: Image5Project4.src, alt: "Evento chips 5" },
+          { src: Image6Project4.src, alt: "Evento chips 6" },
+          { src: Image7Project4.src, alt: "Evento chips 7" },
+          { src: Image8Project4.src, alt: "Evento chips 8" },
+          { src: Image9Project4.src, alt: "Evento chips 9" },
+          { src: Image10Project4.src, alt: "Evento chips 10" },
+        ],
+      },
     ],
   },
   {
     id: "projeto-5",
     title: "Reunião gerencial realizada em 2024 no MCom",
-    description:
-      "Imagens da reunião gerencial realizada em 2024 no MCom que ocorreu em Brasília.",
-    images: [
-      { src: Image1Project5.src, alt: "Outro projeto 1" },
-      { src: Image2Project5.src, alt: "Outro projeto 1" },
-      { src: Image3Project5.src, alt: "Outro projeto 1" },
-      { src: Image4Project5.src, alt: "Outro projeto 1" },
-      { src: Image5Project5.src, alt: "Outro projeto 1" },
-      { src: Image6Project5.src, alt: "Outro projeto 1" },
-      { src: Image7Project5.src, alt: "Outro projeto 1" },
-      { src: Image8Project5.src, alt: "Outro projeto 1" },
-      { src: Image9Project5.src, alt: "Outro projeto 1" },
-      { src: Image10Project5.src, alt: "Outro projeto 1" },
-      { src: Image11Project5.src, alt: "Outro projeto 1" },
-      { src: Image12Project5.src, alt: "Outro projeto 1" },
-      { src: Image13Project5.src, alt: "Outro projeto 1" },
-      { src: Image14Project5.src, alt: "Outro projeto 1" },
-      { src: Image15Project5.src, alt: "Outro projeto 1" },
-      { src: Image16Project5.src, alt: "Outro projeto 1" },
-      { src: Image17Project5.src, alt: "Outro projeto 1" },
-      { src: Image18Project5.src, alt: "Outro projeto 1" },
-      { src: Image19Project5.src, alt: "Outro projeto 1" },
-      { src: Image20Project5.src, alt: "Outro projeto 1" },
+    description: "Reunião gerencial no MCom em Brasília.",
+    versions: [
+      {
+        title: "Reunião no MCom - 2024",
+        description: "",
+        images: [
+          { src: Image1Project5.src, alt: "Reunião MCom 1" },
+          { src: Image2Project5.src, alt: "Reunião MCom 2" },
+          { src: Image3Project5.src, alt: "Reunião MCom 3" },
+          { src: Image4Project5.src, alt: "Reunião MCom 4" },
+          { src: Image5Project5.src, alt: "Reunião MCom 5" },
+          { src: Image6Project5.src, alt: "Reunião MCom 6" },
+          { src: Image7Project5.src, alt: "Reunião MCom 7" },
+          { src: Image8Project5.src, alt: "Reunião MCom 8" },
+          { src: Image9Project5.src, alt: "Reunião MCom 9" },
+          { src: Image10Project5.src, alt: "Reunião MCom 10" },
+          { src: Image11Project5.src, alt: "Reunião MCom 11" },
+          { src: Image12Project5.src, alt: "Reunião MCom 12" },
+          { src: Image13Project5.src, alt: "Reunião MCom 13" },
+          { src: Image14Project5.src, alt: "Reunião MCom 14" },
+          { src: Image15Project5.src, alt: "Reunião MCom 15" },
+          { src: Image16Project5.src, alt: "Reunião MCom 16" },
+          { src: Image17Project5.src, alt: "Reunião MCom 17" },
+          { src: Image18Project5.src, alt: "Reunião MCom 18" },
+          { src: Image19Project5.src, alt: "Reunião MCom 19" },
+          { src: Image20Project5.src, alt: "Reunião MCom 20" },
+        ],
+      },
     ],
   },
 ]
@@ -155,13 +209,20 @@ export default function GaleryPage() {
         <h1 className="sr-only">Galeria de Projetos</h1>
 
         {projectsData.map((project) => (
-          <ProjectSection
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            images={project.images}
-            projectId={project.id}
-          />
+          <div key={project.id} className="mb-10">
+            <h2 className="text-3xl font-bold mb-4">{project.title}</h2>
+            <p className="mb-6">{project.description}</p>
+
+            {project.versions.map((version, idx) => (
+              <ProjectSection
+                key={`${project.id}-version-${idx}`}
+                title={version.title}
+                description={version.description}
+                images={version.images}
+                projectId={`${project.id}-version-${idx}`}
+              />
+            ))}
+          </div>
         ))}
       </div>
     </AosWrapper>
