@@ -1,6 +1,5 @@
 import { FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-
 import Image from "next/image";
 
 import univasfLogo from '@/public/assets/partners/univasf.png';
@@ -27,39 +26,33 @@ const partnersLogos = [
 export default function Footer() {
   return (
     <footer className="bg-[#abd0f3] text-white py-2 flex justify-center">
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="flex gap-6 text-sm">
-          
+      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-6">
+        <div className="flex gap-6 text-sm flex-wrap justify-center">
           {
-            partnersLogos.map((partner) => {
-              if(partner.link) {
-                return(
-                  <span>
+            partnersLogos.map((partner, index) => {
+              if (partner.link) {
+                return (
+                  <span key={index}>
                     <a 
                       href={partner.link} 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
-                      <Image height={55} src={partner.logo} alt='univasf' />
+                      <Image height={55} src={partner.logo} alt='parceiro' />
                     </a>
                   </span>
                 )
               } else {
-                return(
-                  <span>
-                    <Image height={55} src={partner.logo} alt='univasf' />
+                return (
+                  <span key={index}>
+                    <Image height={55} src={partner.logo} alt='parceiro' />
                   </span>
                 )
               }
             })
           }
         </div>
-        <div className="flex gap-4 text-xl">
-          {/* 
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin className="hover:text-gray-300" />
-            </a>
-          */}
+        <div className="flex gap-4 text-xl mt-4 md:mt-0">
           <a href="mailto:crc@univasf.edu.br" target="_blank" rel="noopener noreferrer">
             <SiGmail className="hover:text-gray-300" />
           </a>

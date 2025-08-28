@@ -16,17 +16,17 @@ const ParticlesBackground = () => {
   const options = {
     background: {
       color: {
-        value: "#ffffffff", // Fundo em tom pastel
+        value: "#ffffffff",
       },
     },
     particles: {
       color: {
-        value: "#FF6B00", // Cor das partículas em laranja
+        value: "#FF6B00",
       },
       links: {
         color: "#FF6B00",
         distance: 150,
-        enable: true, // Habilita as linhas de conexão
+        enable: true,
         opacity: 0.5,
         width: 1,
       },
@@ -37,7 +37,7 @@ const ParticlesBackground = () => {
           default: "bounce",
         },
         random: false,
-        speed: 2,
+        speed: 0.5, // Velocidade reduzida para deixar as partículas mais lentas
         straight: false,
       },
       number: {
@@ -65,7 +65,7 @@ const ParticlesBackground = () => {
         },
         onHover: {
           enable: true,
-          mode: "repulse", // Efeito de "repelir" as partículas no hover
+          mode: "repulse",
         },
         resize: true,
       },
