@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.6.0",
     "@react-google-maps/api": "^2.20.6",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.9.1",
     "aos": "^2.3.4",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.503.0",
