@@ -37,18 +37,18 @@ export default function MainPage() {
       </section>
 
       <section className="
-        m-10
-        max-w-5xl mx-auto
-        bg-gradient-to-r from-orange-500 to-yellow-400
-        px-6 py-6 shadow-lg
-        flex justify-center items-center space-x-8
-        text-white font-semibold
-        rounded-2xl
-      "
+          mr-10 ml-10
+          mx-auto
+          bg-gradient-to-r from-orange-500 to-yellow-400
+          px-6 py-6 shadow-lg
+          flex flex-wrap justify-center items-center gap-4
+          text-white font-semibold
+          rounded-2xl
+        "
         // Animação para a seção dos vídeos do YouTube
         data-aos="fade-left"
       >
-        <div className="flex flex-col items-center max-w-md w-full">
+        <div className="flex flex-col items-center max-w-sm w-full">
           <YouTubeEmbed 
             title="Conheça a Colônia Maker"
             description=""
@@ -56,11 +56,19 @@ export default function MainPage() {
           />
         </div>
 
-        <div className="flex flex-col items-center max-w-md w-full">
+        <div className="flex flex-col items-center max-w-sm w-full">
           <YouTubeEmbed 
             title="Formatura de jovens quilombolas"
             description=""
             videoId="Sw3kMJD6ABo"
+          />
+        </div>
+
+        <div className="flex flex-col items-center max-w-sm w-full">
+          <YouTubeEmbed 
+            title="Ponto Digital em Sobradinho"
+            description=""
+            videoId="31SJ0oL_tiQ"
           />
         </div>
       </section>
@@ -111,9 +119,9 @@ export default function MainPage() {
       </section>
       
       {/* Animação para a seção do mapa e informações */}
-      <section className='flex' data-aos="fade-up">
+      <section className='flex flex-wrap lg:flex-nowrap' data-aos="fade-up">
         <div className='
-          flex flex-1 
+          flex w-full
           bg-amber-400 p-0
         '>
           {
@@ -127,7 +135,7 @@ export default function MainPage() {
         
         <div className="
             bg-[#3678ce] text-white p-4
-            flex flex-col flex-1
+            flex flex-col w-full
           "
         >
           <h3 className="

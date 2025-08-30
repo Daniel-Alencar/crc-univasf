@@ -11,7 +11,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = (
 ) => {
   return (
     <div className="mx-auto w-1/1">
-      <h2 className="text-2xl font-bold mb-2">{title}</h2>
+      <h2 className="text-xl font-bold mb-2">{title}</h2>
       <p className="text-gray-600 mb-4">{description}</p>
       <div className="w-full h-80">
         <iframe

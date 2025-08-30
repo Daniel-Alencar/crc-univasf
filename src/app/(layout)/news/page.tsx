@@ -76,7 +76,6 @@ export default function NewsPage() {
 
           {/* Seção de notícias em destaque */}
           <div className="mt-16">
-            <h2 className="text-3xl font-bold text-center mb-12" data-aos="fade-up">NOTÍCIAS DESTAQUE</h2>
 
             <div className="space-y-16">
               {/* Primeiro item - imagem à esquerda */}
