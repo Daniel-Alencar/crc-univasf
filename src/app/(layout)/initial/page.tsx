@@ -6,14 +6,12 @@ import Image from 'next/image';
 import ImageCarousel from '@/components/Carousel';
 import AosWrapper from "@/components/AosWrapper";
 
-import Logo from '@/public/assets/logo.png';
 import ExampleImage from '@/public/assets/equipe CRC.jpeg';
 
 import Footer from '@/components/Footer';
 import { rapidAccessMenu } from '@/constants/rapidAccessMenu';
 import Map from '@/components/Map';
 import YouTubeEmbed from '@/components/YoutubeEmbed';
-import FloatButton from '@/components/FloatButton';
 import Header from '@/components/Header';
 
 export default function MainPage() {
@@ -24,14 +22,16 @@ export default function MainPage() {
     <AosWrapper>
       <Header/>
 
-      <section data-aos="fade-up"> {/* Animação para a seção da imagem principal */}
+      {/* Animação para a seção da imagem principal */}
+      <section data-aos="fade-up">
         { <Image src={ExampleImage} alt='example image' /> } 
       </section> 
   
       <section className='
         flex flex-col justify-center items-center
         m-10'
-        data-aos="zoom-in" // Animação para a seção do carrossel de imagens
+        // Animação para a seção do carrossel de imagens
+        data-aos="zoom-in"
       >
         <ImageCarousel />
       </section>
@@ -45,7 +45,8 @@ export default function MainPage() {
         text-white font-semibold
         rounded-2xl
       "
-        data-aos="fade-left" // Animação para a seção dos vídeos do YouTube
+        // Animação para a seção dos vídeos do YouTube
+        data-aos="fade-left"
       >
         <div className="flex flex-col items-center max-w-md w-full">
           <YouTubeEmbed 
@@ -64,7 +65,8 @@ export default function MainPage() {
         </div>
       </section>
 
-      <section className='m-10' data-aos="fade-up"> {/* Animação para a seção de acesso rápido */}
+      {/* Animação para a seção de acesso rápido */}
+      <section className='m-10' data-aos="fade-up"> 
         <div className="mb-8">
           <button 
             className="
@@ -82,8 +84,8 @@ export default function MainPage() {
               href={item.link} 
               key={index} 
               className="flex flex-col items-center"
-              data-aos="zoom-in" // Animação para cada item individualmente
-              data-aos-delay={index * 100} // Adiciona um pequeno atraso para criar um efeito cascata
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
             >
               <div 
                 className="
@@ -108,7 +110,8 @@ export default function MainPage() {
         </div>
       </section>
       
-      <section className='flex' data-aos="fade-up"> {/* Animação para a seção do mapa e informações */}
+      {/* Animação para a seção do mapa e informações */}
+      <section className='flex' data-aos="fade-up">
         <div className='
           flex flex-1 
           bg-amber-400 p-0

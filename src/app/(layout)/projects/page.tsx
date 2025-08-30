@@ -61,8 +61,8 @@ export default function GaleryPage() {
             <div
               key={project.id}
               className="mb-16 p-6 border rounded-lg shadow-md bg-white"
-              data-aos="fade-up" // Animação para cada projeto
-              data-aos-delay={index * 200} // Atraso para um efeito cascata
+              data-aos="fade-up"
+              data-aos-delay={index * 200}
               data-aos-duration="1000"
             >
               <h2 className="text-2xl font-semibold mb-2 text-gray-800">{project.title}</h2>
@@ -90,8 +90,8 @@ export default function GaleryPage() {
                     src={image.src}
                     alt={image.alt}
                     className="w-full h-48 object-cover rounded shadow-sm"
-                    data-aos="zoom-in" // Animação para cada imagem
-                    data-aos-delay={(index * 200) + (idx * 100)} // Atraso para um efeito cascata nas imagens
+                    data-aos="zoom-in"
+                    data-aos-delay={(index * 200) + (idx * 100)}
                     data-aos-duration="800"
                   />
                 ))}
