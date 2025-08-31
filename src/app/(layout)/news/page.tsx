@@ -75,7 +75,7 @@ export default function NewsPage() {
           </div>
 
           {/* Seção de notícias em destaque */}
-          <div className="mt-16">
+          <div className="mt-16"> 
 
             <div className="space-y-16">
               {/* Primeiro item - imagem à esquerda */}
