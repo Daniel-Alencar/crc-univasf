@@ -1,16 +1,24 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import AosWrapper from "@/components/AosWrapper";
 import Link from 'next/link';
 import { FaInstagram, FaEnvelope } from 'react-icons/fa';
-import { Player, Controls } from '@lottiefiles/react-lottie-player';
-import { useRef } from 'react';
+import dynamic from "next/dynamic";
 
-// Importação direta dos arquivos JSON
+// Importa Player e Controls só no client (ssr desativado)
+const Player = dynamic(
+  () => import('@lottiefiles/react-lottie-player').then(mod => mod.Player),
+  { ssr: false }
+);
+const Controls = dynamic(
+  () => import('@lottiefiles/react-lottie-player').then(mod => mod.Controls),
+  { ssr: false }
+);
+
+// Importação dos JSONs
 import liveChatbotAnimation from '@/components/animacoesJSON/LiveChatbot.json'; 
 import girlOnComputerAnimation from '@/components/animacoesJSON/girl-on-computer.json'; 
-
 
 export default function ContactPage() {
   const lottiePlayer1 = useRef(null);
