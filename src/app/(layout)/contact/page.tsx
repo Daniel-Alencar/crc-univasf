@@ -36,7 +36,7 @@ export default function ContactPage() {
             {/* Lottie Animation - Esquerda */}
             <div className="w-full md:w-1/3">
               <Player
-                ref={lottiePlayer1}
+                // ref={lottiePlayer1}
                 autoplay
                 loop
                 src={liveChatbotAnimation}
@@ -109,7 +109,7 @@ export default function ContactPage() {
             {/* Lottie Animation - Direita */}
             <div className="w-full md:w-1/3">
               <Player
-                ref={lottiePlayer2}
+                // ref={lottiePlayer2}
                 autoplay
                 loop
                 src={girlOnComputerAnimation}
