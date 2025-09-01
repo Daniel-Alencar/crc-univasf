@@ -12,7 +12,9 @@ export default function StaffLayout({
 }) {
   return (
     <>
-      <Header />
+      <div className="sticky top-0 z-[100]">
+        <Header />
+      </div>
       <main>{children}</main>
       <Footer />
     </>
