@@ -1,5 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import CourseDetailClient from "./CourseDetailClient";
 
 export default async function CourseDetailPage({
@@ -9,6 +9,15 @@ export default async function CourseDetailPage({
 }) {
   const { id } = await params;
   const supabase = await createClient();
+
+  // Assistir às aulas exige cadastro e login na plataforma.
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    redirect(`/auth/login?redirectTo=${encodeURIComponent(`/courses/${id}`)}`);
+  }
 
   const { data: course } = await supabase
     .from("courses")

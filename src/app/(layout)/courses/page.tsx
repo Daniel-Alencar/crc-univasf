@@ -3,10 +3,26 @@ import Link from "next/link";
 import AosWrapper from "@/components/AosWrapper";
 import BubbleParticles from "@/components/Particles/BubbleParticles";
 import { createClient } from "@/lib/supabase/server";
-import { BookOpen, PlayCircle, Clock } from "lucide-react";
+import { getFirstName, resolveDisplayName } from "@/lib/auth/displayName";
+import { BookOpen, PlayCircle, Clock, Lock, UserPlus, LogIn } from "lucide-react";
 
 export default async function CoursesPage() {
   const supabase = await createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  let firstName = "";
+  if (user) {
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("full_name")
+      .eq("id", user.id)
+      .maybeSingle();
+
+    firstName = getFirstName(resolveDisplayName(user, profile?.full_name));
+  }
 
   const { data: courses } = await supabase
     .from("courses")
@@ -28,12 +44,55 @@ export default async function CoursesPage() {
           {/* Header */}
           <div className="mb-10 text-center" data-aos="fade-up">
             <h1 className="text-4xl font-bold text-gray-900 mb-3">
-              Cursos do CRC UNIVASF
+              {user && firstName
+                ? `Olá, ${firstName}! Bons estudos.`
+                : "Cursos do CRC UNIVASF"}
             </h1>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               Acesse gratuitamente nossos cursos em vídeo e desenvolva novas habilidades.
             </p>
           </div>
+
+          {/* Chamada de cadastro para quem ainda não tem conta */}
+          {!user && (
+            <div
+              className="mb-10 rounded-2xl bg-gradient-to-r from-orange-500 to-yellow-400 p-6 shadow-md sm:p-7"
+              data-aos="fade-up"
+            >
+              <div className="flex flex-col items-center gap-5 text-center md:flex-row md:justify-between md:text-left">
+                <div className="flex items-start gap-4">
+                  <span className="hidden h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/20 text-white backdrop-blur-sm sm:flex">
+                    <Lock size={24} />
+                  </span>
+                  <div>
+                    <h2 className="text-xl font-bold text-white">
+                      Crie sua conta gratuita para assistir às aulas
+                    </h2>
+                    <p className="mt-1 text-white/90">
+                      O cadastro é rápido e dá acesso a todos os cursos da plataforma.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex w-full shrink-0 flex-col gap-3 sm:w-auto sm:flex-row">
+                  <Link
+                    href="/auth/register?redirectTo=/courses"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 font-semibold text-orange-500 shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
+                  >
+                    <UserPlus size={18} />
+                    Criar conta
+                  </Link>
+                  <Link
+                    href="/auth/login?redirectTo=/courses"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/70 px-5 py-3 font-semibold text-white transition-colors hover:bg-white/15"
+                  >
+                    <LogIn size={18} />
+                    Já tenho conta
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Courses Grid */}
           {courses && courses.length > 0 ? (
@@ -60,7 +119,16 @@ export default async function CoursesPage() {
                       </div>
                     )}
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
-                      <PlayCircle size={52} className="text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" />
+                      {user ? (
+                        <PlayCircle size={52} className="text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" />
+                      ) : (
+                        <span className="flex flex-col items-center gap-1 text-white">
+                          <Lock size={40} className="opacity-90" />
+                          <span className="text-xs font-semibold opacity-90">
+                            Entre para assistir
+                          </span>
+                        </span>
+                      )}
                     </div>
                     {course.category && (
                       <span className="absolute top-3 left-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">

@@ -5,13 +5,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '@/public/assets/logo.png';
 import { FiMenu, FiX } from 'react-icons/fi';
+import AuthNav from './AuthNav';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const externalCourses = true;
+  const externalCourses = false;
 
   return (
     <>
@@ -51,6 +52,7 @@ export default function Header() {
               <li><Link href="/staff" onClick={toggleMenu}>Equipe CRC</Link></li>
               <li><Link href="/galery" onClick={toggleMenu}>Galeria</Link></li>
               <li><Link href="/contact" onClick={toggleMenu}>Informações de contato</Link></li>
+              <AuthNav variant="mobile" onNavigate={toggleMenu} />
             </ul>
           </nav>
         )}
@@ -61,6 +63,7 @@ export default function Header() {
           <div className="flex items-center text-2xl font-bold">
             <Image src={Logo} alt='crc univasf' />
           </div>
+          <AuthNav />
         </div>
 
         <nav className="

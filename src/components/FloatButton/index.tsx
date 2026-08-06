@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export default function FloatButton() {
   return (
-    <Link href={"https://crc.univasf.edu.br/courses/"}>
+    <Link href={"/courses"}>
       <div className="fixed bottom-3 right-3 z-50">
         <button
           type="button"
