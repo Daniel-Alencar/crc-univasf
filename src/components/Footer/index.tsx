@@ -11,9 +11,9 @@ const partnersLogos = [
   {
     logo: univasfLogo,
   },
-  {
-    logo: computersLogo,
-  },
+  // {
+  //   logo: computersLogo,
+  // },
   {
     logo: mcomLogo,
     link: "https://www.gov.br/mcom/pt-br/acesso-a-informacao/acoes-e-programas/programas-projetos-acoes-obras-e-atividades/computadores-para-inclusao-1"
