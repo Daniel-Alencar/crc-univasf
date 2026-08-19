@@ -5,8 +5,11 @@ import React from "react"
 import { createBrowserClient } from "@supabase/ssr";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Save, ArrowLeft, Plus, X } from "lucide-react";
+import { Save, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+
+import MultiImageUploader from "./MultiImageUploader";
+import { useMediaFolderId } from "./ImageUploader";
 
 interface ProjectImage {
   id?: string;
@@ -35,25 +38,15 @@ export default function ProjectForm({ initialData }: { initialData?: ProjectData
   const [images, setImages] = useState<ProjectImage[]>(
     initialData?.project_images || []
   );
-  const [newImageUrl, setNewImageUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
+  const mediaFolderId = useMediaFolderId(initialData?.id);
 
   const supabase = createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   );
-
-  const addImage = () => {
-    if (!newImageUrl) return;
-    setImages([...images, { image_url: newImageUrl, display_order: images.length }]);
-    setNewImageUrl("");
-  };
-
-  const removeImage = (index: number) => {
-    setImages(images.filter((_, i) => i !== index));
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -164,47 +157,15 @@ export default function ProjectForm({ initialData }: { initialData?: ProjectData
           />
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-slate-300 mb-2">
-            Imagens do Projeto
-          </label>
-          <div className="flex gap-2 mb-4">
-            <input
-              type="url"
-              value={newImageUrl}
-              onChange={(e) => setNewImageUrl(e.target.value)}
-              className="flex-1 px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="https://... (URL da imagem)"
-            />
-            <button
-              type="button"
-              onClick={addImage}
-              className="px-4 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors"
-            >
-              <Plus size={20} />
-            </button>
-          </div>
-          {images.length > 0 && (
-            <div className="grid grid-cols-4 gap-4">
-              {images.map((img, index) => (
-                <div key={index} className="relative group">
-                  <img
-                    src={img.image_url || "/placeholder.svg"}
-                    alt={`Imagem ${index + 1}`}
-                    className="w-full h-24 object-cover rounded-lg"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => removeImage(index)}
-                    className="absolute top-1 right-1 p-1 bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
-                  >
-                    <X size={14} />
-                  </button>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+        <MultiImageUploader
+          label="Imagens do Projeto"
+          folder="projects"
+          entityId={mediaFolderId}
+          value={images.map((img) => img.image_url)}
+          onChange={(urls) =>
+            setImages(urls.map((url, index) => ({ image_url: url, display_order: index })))
+          }
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>

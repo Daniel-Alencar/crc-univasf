@@ -4,8 +4,11 @@ import React from "react";
 import { createBrowserClient } from "@supabase/ssr";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Save, ArrowLeft, Plus, X, Trash2, Layout } from "lucide-react";
+import { Save, ArrowLeft, Plus, Trash2, Layout } from "lucide-react";
 import Link from "next/link";
+
+import MultiImageUploader from "./MultiImageUploader";
+import { useMediaFolderId } from "./ImageUploader";
 
 interface GalleryImage {
   id?: string;
@@ -44,6 +47,7 @@ export default function GalleryForm({ initialData }: { initialData?: GalleryCate
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
+  const mediaFolderId = useMediaFolderId(initialData?.id);
 
   const supabase = createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -70,21 +74,12 @@ export default function GalleryForm({ initialData }: { initialData?: GalleryCate
     setSections(newSections);
   };
 
-  const addImageToSection = (sectionIndex: number, url: string) => {
-    if (!url) return;
+  const setSectionImages = (sectionIndex: number, urls: string[]) => {
     const newSections = [...sections];
-    newSections[sectionIndex].images.push({
-      image_url: url,
-      display_order: newSections[sectionIndex].images.length,
-    });
-    setSections(newSections);
-  };
-
-  const removeImageFromSection = (sectionIndex: number, imageIndex: number) => {
-    const newSections = [...sections];
-    newSections[sectionIndex].images = newSections[sectionIndex].images.filter(
-      (_, i) => i !== imageIndex
-    );
+    newSections[sectionIndex] = {
+      ...newSections[sectionIndex],
+      images: urls.map((url, index) => ({ image_url: url, display_order: index })),
+    };
     setSections(newSections);
   };
 
@@ -267,51 +262,14 @@ export default function GalleryForm({ initialData }: { initialData?: GalleryCate
               </div>
 
               {/* Images in Section */}
-              <div className="space-y-4 pt-2 border-t border-slate-700/50">
-                <div className="flex gap-2">
-                  <input
-                    type="url"
-                    placeholder="URL da imagem para esta seção"
-                    className="flex-1 px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") {
-                        e.preventDefault();
-                        addImageToSection(sIndex, (e.target as HTMLInputElement).value);
-                        (e.target as HTMLInputElement).value = "";
-                      }
-                    }}
-                  />
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      const input = e.currentTarget.previousSibling as HTMLInputElement;
-                      addImageToSection(sIndex, input.value);
-                      input.value = "";
-                    }}
-                    className="px-4 py-2 bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 rounded-lg transition-colors text-sm font-medium"
-                  >
-                    Adicionar
-                  </button>
-                </div>
-
-                <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-3">
-                  {section.images.map((img, iIndex) => (
-                    <div key={iIndex} className="relative group aspect-square">
-                      <img
-                        src={img.image_url}
-                        alt="Gallery item"
-                        className="w-full h-full object-cover rounded-lg border border-slate-700"
-                      />
-                      <button
-                        type="button"
-                        onClick={() => removeImageFromSection(sIndex, iIndex)}
-                        className="absolute -top-2 -right-2 p-1 bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-lg"
-                      >
-                        <X size={12} />
-                      </button>
-                    </div>
-                  ))}
-                </div>
+              <div className="pt-2 border-t border-slate-700/50">
+                <MultiImageUploader
+                  folder="gallery"
+                  entityId={mediaFolderId}
+                  compact
+                  value={section.images.map((img) => img.image_url)}
+                  onChange={(urls) => setSectionImages(sIndex, urls)}
+                />
               </div>
             </div>
           ))}

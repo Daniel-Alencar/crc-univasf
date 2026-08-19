@@ -8,6 +8,8 @@ import { useState } from "react";
 import { Save, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
+import ImageUploader, { useMediaFolderId } from "./ImageUploader";
+
 interface NewsData {
   id?: string;
   title: string;
@@ -32,6 +34,7 @@ export default function NewsForm({ initialData }: { initialData?: NewsData }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
+  const mediaFolderId = useMediaFolderId(initialData?.id);
 
   const supabase = createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -128,32 +131,25 @@ export default function NewsForm({ initialData }: { initialData?: NewsData }) {
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">
-              URL da Imagem
-            </label>
-            <input
-              type="url"
-              value={formData.image_url}
-              onChange={(e) => setFormData({ ...formData, image_url: e.target.value })}
-              className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="https://..."
-            />
-          </div>
+        <ImageUploader
+          label="Imagem da Notícia"
+          folder="news"
+          entityId={mediaFolderId}
+          value={formData.image_url}
+          onChange={(url) => setFormData({ ...formData, image_url: url })}
+        />
 
-          <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">
-              Link Externo
-            </label>
-            <input
-              type="url"
-              value={formData.external_link}
-              onChange={(e) => setFormData({ ...formData, external_link: e.target.value })}
-              className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="https://..."
-            />
-          </div>
+        <div>
+          <label className="block text-sm font-medium text-slate-300 mb-2">
+            Link Externo
+          </label>
+          <input
+            type="url"
+            value={formData.external_link}
+            onChange={(e) => setFormData({ ...formData, external_link: e.target.value })}
+            className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="https://..."
+          />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -8,6 +8,8 @@ import { useState } from "react";
 import { Save, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
+import ImageUploader, { useMediaFolderId } from "./ImageUploader";
+
 interface TeamMemberData {
   id?: string;
   name: string;
@@ -36,6 +38,7 @@ export default function TeamMemberForm({ initialData }: { initialData?: TeamMemb
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
+  const mediaFolderId = useMediaFolderId(initialData?.id);
 
   const supabase = createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -130,18 +133,14 @@ export default function TeamMemberForm({ initialData }: { initialData?: TeamMemb
           />
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-slate-300 mb-2">
-            URL da Foto
-          </label>
-          <input
-            type="url"
-            value={formData.image_url}
-            onChange={(e) => setFormData({ ...formData, image_url: e.target.value })}
-            className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="https://..."
-          />
-        </div>
+        <ImageUploader
+          label="Foto do Membro"
+          folder="team"
+          entityId={mediaFolderId}
+          aspect="square"
+          value={formData.image_url}
+          onChange={(url) => setFormData({ ...formData, image_url: url })}
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>

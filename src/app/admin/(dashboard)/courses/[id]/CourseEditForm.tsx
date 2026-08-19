@@ -6,6 +6,8 @@ import { createBrowserClient } from "@supabase/ssr";
 import Link from "next/link";
 import { ArrowLeft, Save, Video } from "lucide-react";
 
+import ImageUploader, { useMediaFolderId } from "@/components/admin/ImageUploader";
+
 interface Course {
   id: string;
   title: string;
@@ -22,6 +24,7 @@ export default function CourseEditForm({ course }: { course: Course }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+  const mediaFolderId = useMediaFolderId(course.id);
 
   const [form, setForm] = useState({
     title: course.title,
@@ -85,11 +88,13 @@ export default function CourseEditForm({ course }: { course: Course }) {
           <textarea required rows={3} value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })}
             className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500 resize-none" />
         </div>
-        <div>
-          <label className="block text-sm font-medium text-slate-300 mb-2">URL da Thumbnail</label>
-          <input type="url" value={form.thumbnail_url} onChange={(e) => setForm({ ...form, thumbnail_url: e.target.value })}
-            className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500" placeholder="https://..." />
-        </div>
+        <ImageUploader
+          label="Thumbnail do Curso"
+          folder="courses"
+          entityId={mediaFolderId}
+          value={form.thumbnail_url}
+          onChange={(url) => setForm({ ...form, thumbnail_url: url })}
+        />
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-slate-300 mb-2">Categoria</label>
